@@ -4,17 +4,6 @@
     --bs-white: #fff;
 }
 
-body{
-    -webkit-appearance:none;
-    background-color: var(--bs-oscuro);
-    color:var(--bs-white);
-}
-
-.card{
-    background-color:var(--bs-oscuro);
-    color:var(--bs-white);
-}
-
 ::-webkit-scrollbar{
     width: 5px;
 }
