@@ -253,8 +253,9 @@ a:hover {
 	position: absolute;
 	top: 0.875rem;
 	left: 1.5rem;
-	color: #7d838a;
+	color: black;
 	opacity: 1;
+	font-weight: 18pt;
 	font-size: 0.875rem;
 	line-height: 1.375rem;
 	cursor: text;
@@ -266,7 +267,7 @@ a:hover {
 .form-control-textarea:focus + .label-control,
 .form-control-textarea.notEmpty + .label-control {
 	top: 0.125rem;
-	color: #4d5055;
+	color: black;
 	opacity: 1;
 	font-size: 0.75rem;
 	font-weight: 700;
