@@ -1,5 +1,4 @@
 /* Description: Master CSS file */
-
 /*****************************************
 Table Of Contents:
 - General Styles
@@ -13,7 +12,7 @@ Table Of Contents:
 - Testimonials
 - Questions
 - Contact
-- Footer 
+- Footer
 - Copyright
 - Back To Top Button
 - Extra Pages
@@ -854,7 +853,7 @@ input[type='checkbox'] {
 /*     Footer     */
 /******************/
 .footer {
-	padding-top: 6.25rem;
+	padding-top: 3rem;
 	padding-bottom: 2rem;
 	background-color: #24262a;
 	text-align: center;
@@ -991,7 +990,7 @@ a:hover.back-to-top {
 
 /*************************/
 /*     Media Queries     */
-/*************************/	
+/*************************/
 /* Min-width 768px */
 @media (min-width: 768px) {
 
@@ -1022,7 +1021,7 @@ a:hover.back-to-top {
 
 /* Min-width 992px */
 @media (min-width: 992px) {
-	
+
 	/* General Styles */
 	.h2-heading {
 		width: 35.25rem;
