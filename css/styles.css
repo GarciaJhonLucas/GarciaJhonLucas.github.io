@@ -600,7 +600,7 @@ input[type='checkbox'] {
 /*******************/
 .split .area-1 {
 	height: 430px;
-	background: linear-gradient(to bottom right, rgba(25, 26, 29, 0.5), rgba(25, 26, 29, 0.5)), url('../images/details-background.webp') center center no-repeat;
+	background: linear-gradient(to bottom right, rgba(25, 26, 29, 0.5), rgba(25, 26, 29, 0.5)), url('') center center no-repeat;
 	background-size: cover;
 }
 
@@ -614,7 +614,7 @@ input[type='checkbox'] {
 }
 
 .split .icons-container {
-	margin-top: 3rem;
+	margin-top: 1rem;
 }
 
 .split .icons-container img {
@@ -909,6 +909,10 @@ a.back-to-top {
 
 a:hover.back-to-top {
 	background-color: #0b36a8;
+}
+
+#interests-image:hover{
+	transform: scale(1);
 }
 
 
