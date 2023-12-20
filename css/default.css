@@ -160,7 +160,7 @@ pre {
 
 blockquote,
 q {
-   quotes: &#8220 &#8220;
+   quotes: #8220 #8220;
 }
 
 blockquote:before,
@@ -1332,7 +1332,7 @@ properly.
    text-transform: uppercase;
    letter-spacing: 1px;
    font-size: 16px;
-   border-bottom: 3px solid #F26464;
+   border-bottom: 3px solid #11ABB0;
    padding-bottom: 7px;
    margin-bottom: 23px;
 }
@@ -1361,6 +1361,19 @@ properly.
    padding: 10px 20px;
    background-color: #FFF;
    border: 1px solid #D7D7D7;
+   border-radius: 27px;
+   margin-right: 15px;
+   margin-bottom: 15px;
+   font-weight: 500;
+}
+
+.ds-skills-list li:hover {
+   display: inline-block;
+   color: #fff;
+   font-size: 16px;
+   padding: 10px 20px;
+   background-color: #0f9095;
+   border: 1px solid #0f9095;
    border-radius: 27px;
    margin-right: 15px;
    margin-bottom: 15px;
