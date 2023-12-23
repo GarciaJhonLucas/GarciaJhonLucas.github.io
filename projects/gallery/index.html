@@ -4,22 +4,134 @@
     <title>CSS Gallery</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="config.css">
 </head>
 
 <body>
-    <p class="heading">CSS Gallery</p>
-    <div class="gallery-image screensaver">
-        <div class="img-box">
-            <img id="image" src="" alt="Imagen">
-            <div class="transparent-box">
-                <div class="caption">
-                    <p>Library</p>
-                    <p class="opacity-low">Architect Design</p>
+
+    <body>
+        <div id="myModal" style="z-index: 100;">
+            <span onclick="cerrarModal()"
+                style="color: #fff; position: absolute; top: 15px; right: 20px; font-size: 30px; cursor: pointer;">&times;</span>
+            <img id="imagenModal">
+        </div>
+        <p class="heading">CSS Gallery</p>
+        <div class="gallery-image">
+            <div class="img-box" onclick="mostrarModal(this)" alt="">
+                <img src="https://picsum.photos/350/250?image=444" />
+                <div class="transparent-box">
+                    <div class="caption">
+                        <p>Library</p>
+                        <p class="opacity-low">Architect Design</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img-box" onclick="mostrarModal(this)" alt="">
+                <img src="https://picsum.photos/350/250/?image=232" alt="" />
+                <div class="transparent-box">
+                    <div class="caption">
+                        <p>Night Sky</p>
+                        <p class="opacity-low">Cinematic</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img-box" onclick="mostrarModal(this)" alt="">
+                <img src="https://picsum.photos/350/250/?image=431" alt="" />
+                <div class="transparent-box">
+                    <div class="caption">
+                        <p>Tea Talk</p>
+                        <p class="opacity-low">Composite</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img-box" onclick="mostrarModal(this)" alt="">
+                <img src="https://picsum.photos/350/250?image=474" alt="" />
+                <div class="transparent-box">
+                    <div class="caption">
+                        <p>Road</p>
+                        <p class="opacity-low">Landscape</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img-box" onclick="mostrarModal(this)" alt="">
+                <img src="https://picsum.photos/350/250?image=344" alt="" />
+                <div class="transparent-box">
+                    <div class="caption">
+                        <p>Sea</p>
+                        <p class="opacity-low">Cityscape</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img-box" onclick="mostrarModal(this)" alt="">
+                <img src="https://picsum.photos/350/250?image=494" alt="" />
+                <div class="transparent-box">
+                    <div class="caption">
+                        <p>Vintage</p>
+                        <p class="opacity-low">Cinematic</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img-box" onclick="mostrarModal(this)" alt="">
+                <img src="https://picsum.photos/350/250?image=494" alt="" />
+                <div class="transparent-box">
+                    <div class="caption">
+                        <p>Vintage</p>
+                        <p class="opacity-low">Cinematic</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img-box" onclick="mostrarModal(this)" alt="">
+                <img src="https://picsum.photos/350/250?image=494" alt="" />
+                <div class="transparent-box">
+                    <div class="caption">
+                        <p>Vintage</p>
+                        <p class="opacity-low">Cinematic</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img-box" onclick="mostrarModal(this)" alt="">
+                <img src="https://picsum.photos/350/250?image=494" alt="" />
+                <div class="transparent-box">
+                    <div class="caption">
+                        <p>Vintage</p>
+                        <p class="opacity-low">Cinematic</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img-box" onclick="mostrarModal(this)" alt="">
+                <img src="https://picsum.photos/350/250?image=494" alt="" />
+                <div class="transparent-box">
+                    <div class="caption">
+                        <p>Vintage</p>
+                        <p class="opacity-low">Cinematic</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img-box" onclick="mostrarModal(this)" alt="">
+                <img src="https://picsum.photos/350/250?image=494" alt="" />
+                <div class="transparent-box">
+                    <div class="caption">
+                        <p>Vintage</p>
+                        <p class="opacity-low">Cinematic</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="script.js"></script>
+    </body>
 </body>
+<script>
+    function mostrarModal(div) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("imagenModal");
+        var img = div.querySelector('img');
+        modal.style.display = "block";
+        modalImg.src = img.src;
+    }
+
+    function cerrarModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+</script>
 
 </html>
