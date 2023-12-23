@@ -126,6 +126,12 @@
         var img = div.querySelector('img');
         modal.style.display = "block";
         modalImg.src = img.src;
+        // Agregar evento de escucha para la tecla "Escape"
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                cerrarModal();
+            }
+        });
     }
 
     function cerrarModal() {
