@@ -1,5 +1,5 @@
 const imageElement = document.getElementById("image");
-const imageFolder = "fotos";
+const imageFolder = "fotos/";
 
 // Hacer una solicitud AJAX para obtener la lista de imágenes en la carpeta
 const xhr = new XMLHttpRequest();
