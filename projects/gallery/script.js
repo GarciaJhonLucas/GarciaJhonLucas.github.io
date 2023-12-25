@@ -1,45 +1,93 @@
-const imageElement = document.getElementById("image");
+
 const imageFolder = "fotos/";
+const imageNames = ['image_1.jpg', 'image_2.jpg', 'image_3.jpg'];
 
-// Hacer una solicitud AJAX para obtener la lista de imágenes en la carpeta
-const xhr = new XMLHttpRequest();
-xhr.open("GET", imageFolder);
-xhr.onload = function () {
-    if (xhr.status === 200) {
-        const responseHTML = xhr.responseText;
-
-        // Crear un elemento temporal para analizar el HTML
-        const tempElement = document.createElement('div');
-        tempElement.innerHTML = responseHTML;
-
-        // Obtener todas las etiquetas de imagen (img)
-        const imageElements = tempElement.querySelectorAll('a');
-
-        // Obtener los nombres de las imágenes
-        const imageNames = Array.from(imageElements).map(imgElement => {
-            const src = imgElement.getAttribute('href');
-            // Puedes procesar 'src' aquí para obtener el nombre si es necesario.
-            return src;
-        });
-
-        // imageNames ahora contiene los nombres de las imágenes
-        console.log(imageNames);
-        imageNames.shift()
-        loadImages(imageNames);
-    } else {
-        console.error("Error al cargar la lista de imágenes.");
-    }
-};
-xhr.send();
-
-let currentIndex = 0;
-
-function loadImages(imageList) {
-    function changeImage() {
-        imageElement.src = imageFolder + imageList[currentIndex];
-        currentIndex = (currentIndex + 1) % imageList.length;
-    }
-
-    setInterval(changeImage, 3000); // Cambia la imagen cada 3 segundos
-    changeImage(); // Carga la primera imagen
+function deprecirader() {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", imageFolder);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            const responseHTML = xhr.responseText;
+            tempElement.innerHTML = responseHTML;
+            console.log(imageNames);
+            imageNames.shift()
+            loadImages(imageNames);
+        } else {
+            console.error("Error al cargar la lista de imágenes.");
+        }
+    };
+    xhr.send();
 }
+
+
+const rutaCarpeta = "./fotos/";
+const galeriaContainer = document.getElementById("gallery-container");
+
+imageNames.forEach(nombreFoto => {
+    const imgBox = document.createElement("div");
+    imgBox.classList.add("img-box");
+    imgBox.onclick = function () {
+        mostrarModal(this);
+    };
+
+    const img = document.createElement("img");
+    img.src = rutaCarpeta + nombreFoto;
+
+    const transparentBox = document.createElement("div");
+    transparentBox.classList.add("transparent-box");
+
+    const caption = document.createElement("div");
+    caption.classList.add("caption");
+    caption.innerHTML = `<p>${nombreFoto}</p>`;
+    transparentBox.appendChild(caption);
+
+    imgBox.appendChild(img);
+    imgBox.appendChild(transparentBox);
+    galeriaContainer.appendChild(imgBox);
+});
+
+
+function loadImages(imageNames) {
+    imageNames.forEach(nombreFoto => {
+        const imgBox = document.createElement("div");
+        imgBox.classList.add("img-box");
+        imgBox.onclick = function () {
+            mostrarModal(this);
+        };
+
+        const img = document.createElement("img");
+        img.src = rutaCarpeta + nombreFoto;
+
+        const transparentBox = document.createElement("div");
+        transparentBox.classList.add("transparent-box");
+
+        const caption = document.createElement("div");
+        caption.classList.add("caption");
+        caption.innerHTML = `<p>${nombreFoto}</p>`;
+        transparentBox.appendChild(caption);
+        imgBox.appendChild(img);
+        imgBox.appendChild(transparentBox);
+        galeriaContainer.appendChild(imgBox);
+    });
+}
+
+function mostrarModal(div) {
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("imagenModal");
+    const img = div.querySelector('img');
+    modal.style.display = "block";
+    modalImg.src = img.src;
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            cerrarModal();
+        }
+    });
+}
+
+function cerrarModal() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+window.onload = cargarFotos;
