@@ -1,311 +1,322 @@
 <!DOCTYPE html>
+<html lang="es">
 
 <head>
-   <meta charset="utf-8">
-   <!-- Primary Meta Tags -->
-   <title>Garcia Jhon Lucas | Full stack developer</title>
-   <meta name="author" content="Garcia Jhon Lucas">
-   <meta name="title" content="Garcia Jhon Lucas | Full stack developer" />
-   <meta name="description"
-      content="Soy un desarrollador Full Stack y creo proyectos para empresas de todos los tamaños y necesidades" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garcia Jhon Lucas · Desarrollador Backend & Full Stack</title>
+  <meta name="description"
+    content="Garcia Jhon Lucas, desarrollador backend y full stack especializado en APIs escalables, arquitectura cloud, DevOps e integración de IA en productos digitales." />
+  <meta name="keywords"
+    content="Garcia Jhon Lucas, desarrollador backend, backend developer, full stack, arquitectura de software, DevOps, cloud, APIs, inteligencia artificial, IA" />
+  <meta name="author" content="Garcia Jhon Lucas" />
+  <meta name="robots" content="index, follow" />
 
-   <!-- Open Graph / Facebook -->
-   <meta property="og:type" content="website" />
-   <meta property="og:url" content="https://garciajhonlucas.github.io/" />
-   <meta property="og:title" content="Garcia Jhon Lucas | Full stack developer" />
-   <meta property="og:description"
-      content="Soy un desarrollador Full Stack y creo proyectos para empresas de todos los tamaños y necesidades" />
-   <meta property="og:image" content="images/meta-tags.png" />
+  <link rel="canonical" href="https://garciajhonlucas.github.io/" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
 
-   <!-- Twitter -->
-   <meta property="twitter:card" content="summary_large_image" />
-   <meta property="twitter:url" content="https://garciajhonlucas.github.io/" />
-   <meta property="twitter:title" content="Garcia Jhon Lucas | Full stack developer" />
-   <meta property="twitter:description"
-      content="Soy un desarrollador Full Stack y creo proyectos para empresas de todos los tamaños y necesidades" />
-   <meta property="twitter:image" content="images/meta-tags.png" />
+  <meta name="theme-color" content="#0a0a0a" />
 
-   <!-- CSS -->
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-   <link rel="stylesheet" href="css/default.css">
-   <link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-   <link rel="stylesheet" href="css/config.css">
-   <script src="js/modernizr.js"></script>
-   <link rel="shortcut icon" href="images/favicon.ico">
+  <!-- Open Graph / redes sociales -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Garcia Jhon Lucas · Portafolio" />
+  <meta property="og:title" content="Garcia Jhon Lucas · Desarrollador Backend & Full Stack" />
+  <meta property="og:description"
+    content="Desarrollador backend y full stack especializado en APIs escalables, arquitectura cloud, DevOps e integración de IA en productos digitales." />
+  <meta property="og:url" content="https://garciajhonlucas.github.io/" />
+  <meta property="og:image" content="https://garciajhonlucas.github.io/images/meta-tags.png" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Garcia Jhon Lucas · Desarrollador Backend & Full Stack" />
+  <meta name="twitter:description"
+    content="Desarrollador backend y full stack especializado en APIs escalables, arquitectura cloud, DevOps e integración de IA." />
+  <meta name="twitter:image" content="https://garciajhonlucas.github.io/images/meta-tags.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/script.js" defer></script>
+
+  <!-- Datos estructurados para buscadores (schema.org Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Garcia Jhon Lucas",
+    "jobTitle": "Desarrollador Backend & Full Stack",
+    "description": "Desarrollador backend y full stack especializado en APIs escalables, arquitectura cloud, DevOps e integración de IA.",
+    "url": "https://garciajhonlucas.github.io/",
+    "sameAs": [
+      "https://linkedin.com/in/garciajhonlucas",
+      "https://github.com/garciajhonlucas"
+    ],
+    "knowsAbout": [
+      "Desarrollo Backend",
+      "Arquitectura de Software",
+      "DevOps",
+      "Cloud",
+      "Inteligencia Artificial"
+    ]
+  }
+  </script>
 </head>
 
 <body>
-   <header id="home">
-      <nav id="nav-wrap">
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-         <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-         <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#about">Sobre mi</a></li>
-            <li><a class="smoothscroll" href="#resume">Resume</a></li>
-            <li><a class="smoothscroll" href="#portfolio">Trabajos</a></li>
-         </ul>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a class="logo" href="#inicio">TN<span class="logo-dot">.</span></a>
+
+      <button class="nav-toggle" type="button" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu"
+        aria-label="Abrir menú de navegación">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <div class="nav-menu" id="nav-menu" data-open="false">
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <a class="btn btn-primary nav-cta" href="#contacto">Contáctame</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <p class="hero-badge">
+          <span class="status-dot" aria-hidden="true"></span>
+          Disponible para nuevos proyectos
+        </p>
+
+        <h1 class="hero-title">
+          Hola, soy
+          <span class="hero-name">garcia Jhon Lucas</span>
+        </h1>
+        <p class="hero-role">Desarrollador Full Stack · Backend & DevOps · IA aplicada</p>
+
+        <p class="hero-pitch">
+          Construyo sistemas backend robustos y APIs escalables, automatizo su
+          despliegue con prácticas DevOps y sumo IA donde aporta valor real al
+          producto, sin perder de vista la experiencia del usuario final.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacto">Hablemos</a>
+          <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS DESTACADOS ============ -->
+    <section class="proyectos" id="proyectos">
+      <div class="container">
+        <p class="section-eyebrow">Trabajo seleccionado</p>
+        <h2 class="section-title reveal">Proyectos destacados</h2>
+        <div class="projects-grid">
+          <!-- TODO: reemplazar con datos reales del proyecto 1
+          <article class="project-card reveal">
+            <h3 class="project-title">Plataforma de Pagos con Arquitectura Event-Driven</h3>
+            <p class="project-desc">
+              Backend de microservicios comunicados por colas de mensajes,
+              con procesamiento asíncrono e idempotencia para operaciones
+              críticas de pago.
+            </p>
+            <p class="project-tags">2026 — Backend, Microservicios</p>
+            <a class="project-link" href="#"
+              aria-label="Ver detalle del proyecto de plataforma de pagos (enlace de ejemplo)">
+              Ver proyecto <span aria-hidden="true">→</span>
+            </a>
+          </article>-->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE MÍ / EXPERIENCIA ============ -->
+    <section class="sobre-mi" id="sobre-mi">
+      <div class="container about-grid">
+        <div class="about-bio">
+          <p class="section-eyebrow">Quién soy</p>
+          <h2 class="section-title reveal">Sobre mí</h2>
+          <p class="reveal">
+            Soy desarrollador full stack con foco en backend, infraestructura
+            y, cada vez más, en IA aplicada a productos reales. Me interesa
+            diseñar sistemas que escalen sin dramas, automatizar todo lo que
+            se pueda automatizar y usar modelos de lenguaje donde realmente
+            resuelven un problema, no como moda.
+          </p>
+        </div>
+
+        <div class="about-timeline">
+          <h3 class="timeline-heading reveal">Experiencia</h3>
+          <ol class="timeline-list">
+
+            <!-- TODO: reemplazar con datos reales de experiencia 1 -->
+            <li class="timeline-item reveal">
+              <p class="timeline-role">Arquitecto de Software (Backend & Cloud)</p>
+              <p class="timeline-company">Empresa Ejemplo Uno</p>
+              <p class="timeline-dates">2024 — Presente</p>
+            </li>
+
+            <!-- TODO: reemplazar con datos reales de experiencia 2 -->
+            <li class="timeline-item reveal">
+              <p class="timeline-role">Desarrollador Backend Senior</p>
+              <p class="timeline-company">Empresa Ejemplo Dos</p>
+              <p class="timeline-dates">2022 — 2024</p>
+            </li>
+
+            <!-- TODO: reemplazar con datos reales de experiencia 3 -->
+            <li class="timeline-item reveal">
+              <p class="timeline-role">Desarrollador Full Stack</p>
+              <p class="timeline-company">Empresa Ejemplo Tres</p>
+              <p class="timeline-dates">2020 — 2022</p>
+            </li>
+
+            <!-- TODO: reemplazar con datos reales de experiencia 4 -->
+            <li class="timeline-item reveal">
+              <p class="timeline-role">Desarrollador Web Junior</p>
+              <p class="timeline-company">Empresa Ejemplo Cuatro</p>
+              <p class="timeline-dates">2018 — 2020</p>
+            </li>
+
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HABILIDADES ============ -->
+    <section class="habilidades" id="habilidades">
+      <div class="container">
+        <p class="section-eyebrow">Stack técnico</p>
+        <h2 class="section-title reveal">Habilidades</h2>
+
+        <ul class="skills-list">
+          <li class="skill-pill reveal">HTML</li>
+          <li class="skill-pill reveal">JavaScript</li>
+          <li class="skill-pill reveal">Node.js</li>
+          <li class="skill-pill reveal">Angular</li>
+          <li class="skill-pill reveal">.NET Core</li>
+          <li class="skill-pill reveal">SQL Server</li>
+          <li class="skill-pill reveal">MongoDB</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="servicios" id="servicios">
+      <div class="container">
+        <p class="section-eyebrow">Cómo puedo ayudar</p>
+        <h2 class="section-title reveal">Servicios</h2>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <h3 class="service-title">Desarrollo Backend & APIs</h3>
+            <p class="service-desc">
+              APIs REST o GraphQL sólidas, bien probadas y documentadas, con
+              foco en rendimiento y facilidad de integración.
+            </p>
+            <p class="service-meta">2–4 semanas · Proyecto individual</p>
+          </article>
+
+          <article class="service-card reveal">
+            <h3 class="service-title">Arquitectura Cloud & DevOps</h3>
+            <p class="service-desc">
+              Infraestructura como código, contenedores y pipelines de CI/CD
+              para desplegar con confianza y escalar sin fricción.
+            </p>
+            <p class="service-meta">1–3 semanas · Consultoría</p>
+          </article>
+
+          <article class="service-card reveal">
+            <h3 class="service-title">Integración de IA en Productos</h3>
+            <p class="service-desc">
+              Incorporación de modelos de lenguaje a flujos existentes:
+              asistentes, automatizaciones y búsqueda con contexto real.
+            </p>
+            <p class="service-meta">3–6 semanas · Proyecto en equipo</p>
+          </article>
+
+          <article class="service-card reveal">
+            <h3 class="service-title">Auditoría técnica</h3>
+            <p class="service-desc">
+              Revisión de arquitectura, rendimiento e infraestructura con
+              recomendaciones concretas y priorizadas.
+            </p>
+            <p class="service-meta">1 semana · Informe detallado</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA BANNER ============ -->
+    <section class="cta-banner" id="hablemos">
+      <div class="container cta-banner-inner">
+        <p class="cta-banner-text reveal">
+          ¿Tienes un proyecto en mente? Conversemos y veamos cómo darle forma.
+        </p>
+        <a class="btn btn-primary" href="#contacto">Escríbeme</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER / CONTACTO ============ -->
+  <footer class="site-footer" id="contacto">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a class="logo" href="#inicio">TN<span class="logo-dot">.</span></a>
+        <p class="footer-tagline">Desarrollo proyectos con mira hacia el futuro.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegación del pie de página">
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
       </nav>
 
-      <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline">Garcia Jhon Lucas</h1>
-            <h3>Soy un desarrollador <span>Full Stack</span> y creo proyectos para empresas de todos los tamaños y
-               necesidades. Comencemos a <a class="smoothscroll" href="#about">desplazarnos</a>
-               y aprendamos más <a class="smoothscroll" href="#about">sobre mí</a>.</h3>
-            <hr />
-            <ul class="social">
-               <li><a target="_blank" href="https://twitter.com/GarciaJhonLucas"><i class="fa fa-twitter"></i></a></li>
-               <li><a target="_blank" href="https://pe.linkedin.com/in/garciajhonlucas"><i
-                        class="fa fa-linkedin"></i></a></li>
-               <li><a target="_blank" href="https://instagram.com/GarciaJhonLucas"><i class="fa fa-instagram"></i></a>
-               </li>
-               <li><a target="_blank" href="https://github.com/GarciaJhonLucas"><i class="fa fa-github"></i></a></li>
-            </ul>
-         </div>
-      </div>
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
-   </header>
-
-   <section id="about">
-      <div class="row">
-         <div class="three columns">
-            <img class="profile-pic" src="images/profilepic.jpg" alt="" />
-         </div>
-
-         <div class="nine columns main-col">
-            <h2>Sobre mi</h2>
-            <p>Soy un profesional dinámico y orientado a resultados, con experiencia en el
-               desarrollo de software. Mi enfoque se centra en la entrega de soluciones y calidad. A lo largo de mi
-               carrera, he demostrado un compromiso con la excelencia técnica y la
-               innovación. Poseo un historial en la implementación y mantenimiento de aplicaciones,
-               destacando por mi capacidad para resolver desafíos complejos de manera efectiva.
-               Mi pasión por el desarrollo de software se refleja en mi habilidad para abordar proyectos con un enfoque
-               metódico y proactivo. He participado en todas las fases del ciclo de vida del desarrollo de software,
-               desde la concepción de ideas hasta la implementación y optimización continua.
-            </p>
-            <div class="row">
-               <div class="columns contact-Detalles">
-                  <h2>Contacto</h2>
-                  <p class="address">
-                     <span>GarciaJhonLucas@gmail.com</span>
-                  </p>
-               </div>
-               <div class="columns download">
-                  <p>
-                     <a target="_blank" href="https://garciajhonlucas.github.io/docs/garcia_jhon_lucas_resume.pdf"
-                        class="button"><i class="fa fa-download"></i>Descargar cv</a>
-                  </p>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-
-   <section id="resume">
-      <div class="row education">
-         <h1><span>Educación</span></h1><br>
-         <div class="row item">
-            <div class="six columns">
-               <h3>SILABUZ</h3>
-               <p class="info">Desarrollador Back End <span>&bull;</span> <em class="date">Octubre 2022 - Febrero
-                     2023</em></p>
-               <p>
-               </p>
-            </div>
-            <div class="six columns">
-               <h3>Universidad Peruana Los Andes</h3>
-               <p class="info">Bach. Ingeniería de sistemas y computación <span>&bull;</span> <em class="date">Abril
-                     2018 - Agosto
-                     2022</em></p>
-               <p>
-               </p>
-            </div>
-            <div class="six columns">
-               <h3>IESTP "AACD" - Tecnológico de Cajas</h3>
-               <p class="info">Técnico en computación e informática <span>&bull;</span> <em class="date">Abril 2015 -
-                     Diciembre
-                     2017</em></p>
-               <p></p>
-            </div>
-         </div>
+      <div class="footer-contact">
+        <h3 class="footer-heading">Contacto</h3>
+        <ul class="footer-contact-list">
+          <li>
+            <a href="mailto:tu@email.com">hola@garciajhonlucas.com</a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/garciajhonlucas" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://github.com/garciajhonlucas" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </li>
+        </ul>
       </div>
 
-      <div class="row work">
-         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-            <h1><span>Experiencia</span></h1><br>
-            <div class="row item">
-               <div class="six columns">
-                  <h3>Clinica Cayetano Heredia</h3>
-                  <p class="info">Desarrollador full stack <span>&bull;</span> <em class="date">Setiembre 2023 -
-                        Presente</em></p>
-                  <p>
-                  </p>
-               </div>
-               <div class="six columns">
-                  <h3>DexSol</h3>
-                  <p class="info">Desarrollador full stack <span>&bull;</span> <em class="date">Febrero 2023 - Agosto
-                        2023</em></p>
-                  <p>
-                  </p>
-               </div>
-            </div>
-            <div class="row item">
-               <div class="six columns">
-                  <h3>GrosoTec</h3>
-                  <p class="info">Desarrollador <span>&bull;</span> <em class="date">Agosto 2021 - Diciembre
-                        2021</em>
-                  </p>
-                  <p>
-                  </p>
-               </div>
-               <div class="six columns">
-                  <h3>SolIntELS</h3>
-                  <p class="info">Desarrollador <span>&bull;</span> <em class="date">Marzo 2018 - Abril 2019</em></p>
-                  <p>
-                  </p>
-               </div>
-            </div>
-         </div>
-      </div>
+    </div>
 
-      <div class="row skill">
-         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-            <h1><span>Skills</span></h1><br>
-            <ul class="ds-skills-list">
-               <li>HTML</li>
-               <li>JavaScript</li>
-               <li>Node.js</li>
-               <li>Angular</li>
-               <li>.Net Core</li>
-               <li>Sql server</li>
-               <li>MongoDB</li>
-               <li>Github</li>
-            </ul>
-         </div>
-      </div>
-   </section>
+    <div class="container footer-bottom">
+      <p>© 2026 garcia Jhon Lucas. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-   <section id="portfolio">
-      <div class="wrapper">
-         <div class="row rows">
-            <div class="six columns">
-               <section>
-                  <h3 class="ds-work-tilte">Sistema para la generacion de contraseñas</h3>
-                  <p>Simple proyecto para generar contraseñas realizado con python. <a href="work-control-facturas.html"
-                        class="ds-button">Detalles</a>
-                  </p>
-                  <ul class="ds-skills-list-min">
-                     <li>HTML</li>
-                     <li>CSS</li>
-                     <li>python</li>
-                     <li>SqlLite</li>
-                  </ul>
-               </section>
-            </div>
-            <div class="six columns">
-               <figure><img src="./images/django-app-password.png"></figure>
-            </div>
-         </div>
-         <div class="row rows">
-            <div class="six columns">
-               <section>
-                  <h3 class="ds-work-tilte">Sistema de Control de Facturas</h3>
-                  <p>Un proyecto que nació de la necesidad de optimizar la
-                     gestión de facturas para VelCarTrac. Este sistema fue diseñado con el
-                     objetivo de proporcionar una solución eficiente y fácil de usar para el seguimiento y manejo de
-                     documentos financieros esenciales. <a href="work-control-facturas.html"
-                        class="ds-button">Detalles</a>
-                  </p>
-                  <ul class="ds-skills-list-min">
-                     <li>HTML</li>
-                     <li>JavaScript</li>
-                     <li>PHP CodeIgniter</li>
-                     <li>MySQL</li>
-                  </ul>
-               </section>
-            </div>
-            <div class="six columns">
-               <figure><img src="./images/control-facturas.webp"></figure>
-            </div>
-         </div>
-         <div class="row rows">
-            <div class="six columns">
-               <section>
-                  <h3 class="ds-work-tilte">Sistema gestion de rentas</h3>
-                  <p>Un proyecto que surgio para actualizar la
-                     gestión de rentas del la municipalidad. Este sistema fue diseñado con el
-                     objetivo de proporcionar una solución eficiente de usar para el seguimiento y manejo costos y
-                     gastos
-                     sucitados en la entidad. <a href="work-control-facturas.html" class="ds-button">Detalles</a>
-                  </p>
-                  <ul class="ds-skills-list-min">
-                     <li>Angular</li>
-                     <li>c# - .Net</li>
-                     <li>Sql Server</li>
-                  </ul>
-               </section>
-            </div>
-            <div class="six columns">
-               <figure><!--<img src="./images/control-facturas.webp">--></figure>
-            </div>
-         </div>
-         <div class="row rows">
-            <div class="six columns">
-               <section>
-                  <h3 class="ds-work-tilte">Sistema gestion de recursos</h3>
-                  <p>Un proyecto que surgio para organizar y ver la
-                     gestión de recursos de una empresa. Este sistema fue diseñado con el
-                     objetivo de proporcionar una solución eficiente de usar para el seguimiento y manejo de recursos en
-                     la entidad. <a href="work-control-facturas.html" class="ds-button">Detalles</a>
-                  </p>
-                  <ul class="ds-skills-list-min">
-                     <li>HTML</li>
-                     <li>Php</li>
-                     <li>My-sql</li>
-                  </ul>
-               </section>
-            </div>
-            <div class="six columns">
-               <figure><!--<img src="./images/control-facturas.webp">--></figure>
-            </div>
-         </div>
-      </div>
-   </section>
-
-   <footer>
-      <div class="row">
-         <div class="twelve columns">
-            <ul class="social-links">
-               <li><a target="_blank" href="https://twitter.com/GarciaJhonLucas"><i class="fa fa-twitter"></i></a></li>
-               <li><a target="_blank" href="https://pe.linkedin.com/in/garciajhonlucas"><i
-                        class="fa fa-linkedin"></i></a></li>
-               <li><a target="_blank" href="https://instagram.com/GarciaJhonLucas"><i class="fa fa-instagram"></i></a>
-               </li>
-               <li><a target="_blank" href="https://github.com/GarciaJhonLucas"><i class="fa fa-github"></i></a></li>
-            </ul>
-            <ul class="copyright">
-               <li>&copy; Copyright <a href="./projects/index.html">2023</a> </li>
-            </ul>
-         </div>
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a>
-         </div>
-      </div>
-   </footer>
-
-   <!-- Java Script -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
 </body>
 
 </html>
