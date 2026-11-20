@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-label="Garcia Jhon Lucas, Full Stack Developer. Construyo sistemas completos, capa por capa.">
+  <style>
+    .sans{font-family:Archivo,'Helvetica Neue',Arial,sans-serif}
+    .mono{font-family:'Martian Mono',ui-monospace,Consolas,monospace}
+    .lbl{font-family:Archivo,'Arial Narrow','Helvetica Neue',Arial,sans-serif;font-weight:700;letter-spacing:1.4px}
+  </style>
+  <rect width="1200" height="470" fill="#101215"/>
+  <rect x="16.5" y="16.5" width="1167" height="437" fill="none" stroke="#e8ebee"/>
+  <g class="mono" font-size="11" fill="#a7afb9" text-anchor="middle">
+    <line x1="16" y1="42.5" x2="1184" y2="42.5" stroke="#e8ebee"/>
+    <g stroke="#2b3037"><line x1="211.5" y1="17" x2="211.5" y2="42"/><line x1="405.5" y1="17" x2="405.5" y2="42"/><line x1="600.5" y1="17" x2="600.5" y2="42"/><line x1="794.5" y1="17" x2="794.5" y2="42"/><line x1="989.5" y1="17" x2="989.5" y2="42"/></g>
+    <text x="114" y="34">A</text><text x="308" y="34">B</text><text x="503" y="34">C</text><text x="697" y="34">D</text><text x="892" y="34">E</text><text x="1086" y="34">F</text>
+  </g>
+
+  <text x="56" y="96" class="lbl" font-size="13" fill="#a7afb9">GARCIA JHON LUCAS — DESARROLLADOR FULL STACK</text>
+  <g class="sans" font-weight="800" font-size="54" letter-spacing="-1.6" fill="#e8ebee">
+    <text x="54" y="160">Construyo sistemas</text>
+    <text x="54" y="216">completos, capa</text>
+    <text x="54" y="272">por capa.</text>
+  </g>
+  <g class="sans" font-size="17" fill="#a7afb9">
+    <text x="56" y="314">Interfaz, backend, datos y nube. Más de 5 años en software</text>
+    <text x="56" y="338">que se usa todos los días, en salud y alquileres.</text>
+  </g>
+  <rect x="56" y="356" width="268" height="28" fill="#e6f22a"/>
+  <text x="70" y="374.5" class="mono" font-size="11.5" fill="#15171a">● DISPONIBLE PARA NUEVOS PROYECTOS</text>
+
+  <g stroke="#6f7782" stroke-dasharray="4 4" fill="none">
+    <line x1="780.5" y1="118" x2="780.5" y2="338"/>
+    <line x1="1080.5" y1="118" x2="1080.5" y2="338"/>
+    <line x1="930.5" y1="162" x2="930.5" y2="382"/>
+  </g>
+  <g stroke="#e8ebee" stroke-linejoin="round">
+    <g transform="translate(0,328)"><polygon points="780,0 930,44 930,54 780,10" fill="#2b3037"/><polygon points="930,44 1080,0 1080,10 930,54" fill="#6f7782"/><polygon points="780,0 930,-44 1080,0 930,44" fill="#171a1f"/></g>
+    <g transform="translate(0,258)"><polygon points="780,0 930,44 930,54 780,10" fill="#2b3037"/><polygon points="930,44 1080,0 1080,10 930,54" fill="#6f7782"/><polygon points="780,0 930,-44 1080,0 930,44" fill="#171a1f"/></g>
+    <g transform="translate(0,188)"><polygon points="780,0 930,44 930,54 780,10" fill="#2b3037"/><polygon points="930,44 1080,0 1080,10 930,54" fill="#6f7782"/><polygon points="780,0 930,-44 1080,0 930,44" fill="#171a1f"/></g>
+    <g transform="translate(0,118)"><polygon points="780,0 930,44 930,54 780,10" fill="#2b3037"/><polygon points="930,44 1080,0 1080,10 930,54" fill="#6f7782"/><polygon points="780,0 930,-44 1080,0 930,44" fill="#171a1f"/></g>
+  </g>
+  <g stroke="#e8ebee" fill="#101215">
+    <line x1="754" y1="118" x2="780" y2="118"/><circle cx="740" cy="118" r="14"/>
+    <line x1="754" y1="188" x2="780" y2="188"/><circle cx="740" cy="188" r="14"/>
+    <line x1="754" y1="258" x2="780" y2="258"/><circle cx="740" cy="258" r="14"/>
+    <line x1="754" y1="328" x2="780" y2="328"/><circle cx="740" cy="328" r="14"/>
+  </g>
+  <g class="mono" font-size="12" fill="#e8ebee" text-anchor="middle">
+    <text x="740" y="122">1</text><text x="740" y="192">2</text><text x="740" y="262">3</text><text x="740" y="332">4</text>
+  </g>
+  <g class="lbl" font-size="11" fill="#a7afb9">
+    <text x="1094" y="122">INTERFAZ</text><text x="1094" y="192">LÓGICA</text><text x="1094" y="262">DATOS</text><text x="1094" y="332">NUBE</text>
+  </g>
+
+  <line x1="16" y1="406.5" x2="1184" y2="406.5" stroke="#e8ebee"/>
+  <g stroke="#e8ebee"><line x1="360.5" y1="406" x2="360.5" y2="453"/><line x1="620.5" y1="406" x2="620.5" y2="453"/><line x1="990.5" y1="406" x2="990.5" y2="453"/></g>
+  <g class="lbl" font-size="10" fill="#a7afb9">
+    <text x="32" y="424">RESPONSABLE</text><text x="376" y="424">ROL</text><text x="636" y="424">STACK</text><text x="1006" y="424">LÁMINA</text>
+  </g>
+  <g class="sans" font-weight="700" font-size="15" fill="#e8ebee">
+    <text x="32" y="443">Garcia Jhon Lucas</text><text x="376" y="443">Full Stack Developer</text><text x="636" y="443">.NET · Angular · Laravel · Go · SQL</text>
+  </g>
+  <text x="1006" y="443" class="mono" font-size="12" fill="#e8ebee">00 / 05</text>
+</svg>

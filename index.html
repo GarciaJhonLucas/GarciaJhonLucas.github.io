@@ -1,322 +1,1039 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Garcia Jhon Lucas · Desarrollador Backend & Full Stack</title>
-  <meta name="description"
-    content="Garcia Jhon Lucas, desarrollador backend y full stack especializado en APIs escalables, arquitectura cloud, DevOps e integración de IA en productos digitales." />
-  <meta name="keywords"
-    content="Garcia Jhon Lucas, desarrollador backend, backend developer, full stack, arquitectura de software, DevOps, cloud, APIs, inteligencia artificial, IA" />
-  <meta name="author" content="Garcia Jhon Lucas" />
-  <meta name="robots" content="index, follow" />
-
-  <link rel="canonical" href="https://garciajhonlucas.github.io/" />
-  <link rel="shortcut icon" href="images/favicon.ico" />
-
-  <meta name="theme-color" content="#0a0a0a" />
-
-  <!-- Open Graph / redes sociales -->
-  <meta property="og:type" content="profile" />
-  <meta property="og:site_name" content="Garcia Jhon Lucas · Portafolio" />
-  <meta property="og:title" content="Garcia Jhon Lucas · Desarrollador Backend & Full Stack" />
-  <meta property="og:description"
-    content="Desarrollador backend y full stack especializado en APIs escalables, arquitectura cloud, DevOps e integración de IA en productos digitales." />
-  <meta property="og:url" content="https://garciajhonlucas.github.io/" />
-  <meta property="og:image" content="https://garciajhonlucas.github.io/images/meta-tags.png" />
-  <meta property="og:locale" content="es_ES" />
-
-  <!-- Twitter Card -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      // If any script fails, fall back to the static (complete) page
+      window.addEventListener("error", function () { root.classList.remove("js"); });
+      // Missing facts are only marked locally or with ?gaps, never on the live site
+      var host = location.hostname;
+      if (location.protocol === "file:" || host === "localhost" || host === "127.0.0.1" || /[?&]gaps\b/.test(location.search)) {
+        root.classList.add("show-gaps");
+      }
+      try {
+        var theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") root.dataset.theme = theme;
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches) root.dataset.theme = "dark";
+        var lang = localStorage.getItem("lang");
+        if (lang !== "es" && lang !== "en") lang = (navigator.language || "es").toLowerCase().indexOf("es") === 0 ? "es" : "en";
+        root.dataset.lang = lang;
+      } catch (e) { root.dataset.lang = "es"; }
+    })();
+  </script>
+  <title>Garcia Jhon Lucas — Desarrollador Full Stack</title>
+  <meta name="description" content="Garcia Jhon Lucas, desarrollador Full Stack. Trabajo en todas las capas de sistemas de gestión, de la interfaz a la nube, con más de 5 años en software de salud y alquileres." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_PE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Garcia Jhon Lucas — Desarrollador Full Stack" />
+  <meta property="og:description" content="Desarrollador Full Stack: trabajo en todas las capas de un sistema, la interfaz, el backend, la base de datos y la nube." />
+  <link rel="canonical" href="https://garciajhonlucas.pe/" />
+  <meta property="og:url" content="https://garciajhonlucas.pe/" />
+  <meta property="og:image" content="https://garciajhonlucas.pe/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Garcia Jhon Lucas, desarrollador Full Stack: un sistema dibujado en sus cuatro capas, interfaz, backend, datos y nube." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Garcia Jhon Lucas · Desarrollador Backend & Full Stack" />
-  <meta name="twitter:description"
-    content="Desarrollador backend y full stack especializado en APIs escalables, arquitectura cloud, DevOps e integración de IA." />
-  <meta name="twitter:image" content="https://garciajhonlucas.github.io/images/meta-tags.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wdth,wght@75..112.5,400..600&display=swap" rel="stylesheet" />
+  <style>
+    /* ---------- Tokens: drafting film and ink ---------- */
+    :root {
+      --film: #eef0f2;
+      --film-2: #e4e7eb;
+      --ink: #15171a;
+      --ink-2: #4a5059;
+      --line: #8a9099;
+      --hair: #cdd2d8;
+      --mark: #e6f22a;
+      --on-mark: #15171a;
+      --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
+      --mono: "Martian Mono", ui-monospace, monospace;
+      --gutter: 24px;
+      color-scheme: light;
+    }
+    [data-theme="dark"] {
+      --film: #101215;
+      --film-2: #171a1f;
+      --ink: #e8ebee;
+      --ink-2: #a7afb9;
+      --line: #6f7782;
+      --hair: #2b3037;
+      color-scheme: dark;
+    }
 
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="js/script.js" defer></script>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scrollbar-color: var(--line) var(--film); }
+    body {
+      background: var(--film); color: var(--ink);
+      font-family: var(--font); font-size: 1.0625rem; line-height: 1.55;
+      font-variation-settings: "wdth" 100;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--mark); color: var(--on-mark); }
+    a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    svg { display: block; }
+    .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .wrap { width: min(1240px, 100% - 32px); margin-inline: auto; }
 
-  <!-- Datos estructurados para buscadores (schema.org Person) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Garcia Jhon Lucas",
-    "jobTitle": "Desarrollador Backend & Full Stack",
-    "description": "Desarrollador backend y full stack especializado en APIs escalables, arquitectura cloud, DevOps e integración de IA.",
-    "url": "https://garciajhonlucas.github.io/",
-    "sameAs": [
-      "https://linkedin.com/in/garciajhonlucas",
-      "https://github.com/garciajhonlucas"
-    ],
-    "knowsAbout": [
-      "Desarrollo Backend",
-      "Arquitectura de Software",
-      "DevOps",
-      "Cloud",
-      "Inteligencia Artificial"
-    ]
-  }
-  </script>
+    /* Drawing lettering: condensed caps for labels, mono only for numbers */
+    .label {
+      font-stretch: 75%; font-variation-settings: "wdth" 75;
+      font-weight: 600; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2);
+    }
+    .num { font-family: var(--mono); font-size: .72rem; font-variant-numeric: tabular-nums; }
+
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    main:focus { outline: none; }
+    .skip-link {
+      position: absolute; left: 16px; top: -100px; z-index: 100;
+      padding: 10px 16px; background: var(--ink); color: var(--film); font-weight: 600; text-decoration: none;
+    }
+    .skip-link:focus { top: 12px; }
+
+    /* ---------- Header ---------- */
+    .top {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--film); border-bottom: 1px solid var(--ink);
+    }
+    .top .wrap { display: flex; align-items: center; gap: 24px; min-height: 64px; }
+    .brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1.1; margin-right: auto; }
+    .brand b { font-stretch: 112%; font-variation-settings: "wdth" 112; font-weight: 800; font-size: 1.05rem; letter-spacing: -.01em; }
+    .brand span { font-size: .78rem; color: var(--ink-2); }
+    .menu ul { display: flex; list-style: none; }
+    .menu a {
+      display: inline-flex; align-items: center; min-height: 44px; padding-inline: 12px;
+      text-decoration: none; font-stretch: 75%; font-variation-settings: "wdth" 75;
+      font-weight: 600; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .menu a:hover { text-decoration: underline; }
+    .controls { display: flex; align-items: center; gap: 8px; }
+    .seg { display: flex; border: 1px solid var(--ink); }
+    .seg button {
+      min-width: 40px; min-height: 36px; padding-inline: 8px;
+      font-stretch: 75%; font-variation-settings: "wdth" 75; font-weight: 700; font-size: .85rem; letter-spacing: .08em;
+    }
+    .seg button[aria-pressed="true"] { background: var(--ink); color: var(--film); }
+    .icon-btn { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--ink); }
+    .icon-btn svg { width: 18px; height: 18px; }
+    .icon-sun { display: none; }
+    [data-theme="dark"] .icon-sun { display: block; }
+    [data-theme="dark"] .icon-moon { display: none; }
+
+    /* ---------- Sheet frame ---------- */
+    .sheet { padding: 0 0 96px; scroll-margin-top: 64px; }
+    .ruler {
+      display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
+      border-bottom: 1px solid var(--ink); margin-bottom: 56px;
+      font-family: var(--mono); font-size: .62rem; color: var(--ink-2);
+    }
+    .ruler span { border-left: 1px solid var(--ink); padding: 3px 6px; }
+    .ruler span:last-child { border-right: 1px solid var(--ink); }
+    .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); }
+    h1, h2, h3 { font-stretch: 112%; font-variation-settings: "wdth" 112; text-wrap: balance; }
+    h2 { font-weight: 800; font-size: clamp(2rem, 4.2vw, 3.5rem); line-height: 1; letter-spacing: -.025em; }
+    .intro { color: var(--ink-2); max-width: 60ch; margin-top: 20px; }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 0 22px; border: 1px solid var(--ink);
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      transition: background-color .15s, color .15s;
+    }
+    .btn svg { width: 18px; height: 18px; flex: none; }
+    .btn-ink { background: var(--ink); color: var(--film); }
+    .btn-ink:hover, .btn-ink:focus-visible { background: var(--mark); color: var(--on-mark); border-color: var(--on-mark); }
+    .btn-line:hover { background: var(--film-2); }
+    .text-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+    .text-link svg { width: 16px; height: 16px; }
+
+    /* ---------- Hero: copy + exploded drawing ---------- */
+    .hero { padding-top: 0; }
+    .hero .ruler { margin-bottom: 40px; }
+    .hero-copy { grid-column: 1 / 6; align-self: center; padding-bottom: 24px; }
+    .hero h1 { font-weight: 800; font-size: clamp(2.4rem, 4.4vw, 4.25rem); line-height: .98; letter-spacing: -.03em; }
+    .lead { margin-top: 24px; font-size: 1.125rem; color: var(--ink-2); max-width: 46ch; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .availability { display: flex; align-items: center; gap: 10px; margin-top: 28px; }
+    .availability i { width: 10px; height: 10px; border: 1px solid var(--ink); background: var(--ink); flex: none; }
+
+    .drawing { grid-column: 6 / 13; border: 1px solid var(--ink); }
+    .tabs { display: flex; border-bottom: 1px solid var(--ink); }
+    .tabs button {
+      flex: 1; min-height: 44px; display: flex; align-items: center; gap: 10px; padding: 0 14px;
+      border-right: 1px solid var(--ink); font-weight: 700; text-align: left;
+    }
+    .tabs button:last-child { border-right: 0; }
+    .tabs button[aria-selected="true"] { background: var(--ink); color: var(--film); }
+    .tabs button:not([aria-selected="true"]):hover { background: var(--film-2); }
+    .drawing-body { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+    .figure { border-right: 1px solid var(--ink); padding: 16px 12px 12px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; }
+    .figure svg { width: 100%; height: auto; max-height: 600px; color: var(--ink); }
+    .figure figcaption { margin-top: 4px; }
+
+    /* SVG drawing parts */
+    .plate-top { fill: var(--film); stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; }
+    .plate-side { fill: url(#hatch); stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; }
+    .glyph * { fill: none; stroke: currentColor; stroke-width: 1.1; vector-effect: non-scaling-stroke; }
+    .axis { stroke: var(--line); stroke-width: 1; stroke-dasharray: 10 4 2 4; }
+    .leader { stroke: currentColor; stroke-width: 1; }
+    .leader-dot { fill: currentColor; }
+    .balloon circle { fill: var(--film); stroke: currentColor; stroke-width: 1.25; }
+    .balloon text { font-family: var(--mono); font-size: 13px; fill: currentColor; text-anchor: middle; dominant-baseline: central; }
+    .plate.is-active .plate-top, .balloon.is-active circle { fill: var(--mark); }
+    .plate.is-active .glyph *, .balloon.is-active text { stroke: var(--on-mark); }
+    .balloon.is-active text { fill: var(--on-mark); stroke: none; }
+    .plate { cursor: default; }
+
+    .parts { display: flex; flex-direction: column; }
+    table { border-collapse: collapse; width: 100%; }
+    .parts-table th, .parts-table td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid var(--ink); }
+    .parts-table thead th { padding-block: 7px; }
+    .parts-table td:first-child { width: 44px; }
+    .parts-table tbody tr { transition: background-color .15s; }
+    .parts-table tbody tr.is-active { background: var(--mark); color: var(--on-mark); }
+    .parts-table tbody tr.is-active .label { color: var(--on-mark); }
+    .part-btn { font-weight: 700; text-align: left; padding: 0; }
+    .spec { font-size: .95rem; }
+
+    .title-block { margin-top: auto; }
+    .title-block th, .title-block td { padding: 6px 12px; border-top: 1px solid var(--ink); text-align: left; vertical-align: baseline; }
+    .title-block th { width: 34%; }
+    .title-block td { font-weight: 600; font-size: .95rem; }
+    .title-block .owner { font-weight: 800; white-space: nowrap; }
+
+    /* ---------- Projects schedule ---------- */
+    .schedule { margin-top: 48px; border-top: 1px solid var(--ink); }
+    .entry { padding: 28px 0; border-bottom: 1px solid var(--ink); }
+    .entry-id { grid-column: 1 / 4; }
+    .entry h3 { font-weight: 800; font-size: 1.9rem; line-height: 1.05; letter-spacing: -.02em; }
+    .entry-type { color: var(--ink-2); margin-top: 4px; }
+    .entry-desc { grid-column: 4 / 8; max-width: 44ch; }
+    .entry-layers { grid-column: 8 / 11; display: grid; align-content: start; }
+    .entry-layers div { display: grid; grid-template-columns: 9.5em 1fr; gap: 12px; padding: 5px 0; border-bottom: 1px solid var(--hair); }
+    .entry-layers div:first-child { border-top: 1px solid var(--hair); }
+    .entry-layers dd { font-weight: 600; font-size: .95rem; }
+    .entry-foot { grid-column: 11 / 13; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .status { display: inline-flex; align-items: center; gap: 8px; }
+    .status svg { width: 14px; height: 14px; }
+    .link-btn { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; text-decoration: underline; text-underline-offset: .22em; min-height: 44px; }
+    .link-btn svg { width: 16px; height: 16px; }
+
+    .oss-head { margin-top: 80px; }
+    .oss-head h3 { font-weight: 800; font-size: clamp(1.5rem, 2.6vw, 2.1rem); letter-spacing: -.02em; }
+    .repos { list-style: none; margin-top: 28px; border-top: 1px solid var(--ink); }
+    .repos a {
+      display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: 6px;
+      padding: 20px 0; border-bottom: 1px solid var(--ink); text-decoration: none;
+    }
+    .repos a:hover .repo-name { text-decoration: underline; }
+    .repo-name { grid-column: 1 / 4; font-weight: 800; font-size: 1.2rem; }
+    .repo-type { grid-column: 1 / 4; grid-row: 2; }
+    .repo-desc { grid-column: 4 / 9; grid-row: 1 / 3; color: var(--ink-2); max-width: 52ch; }
+    .repo-stack { grid-column: 9 / 11; grid-row: 1 / 3; font-size: .9rem; }
+    .repo-go { grid-column: 11 / 13; grid-row: 1 / 3; justify-self: end; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; }
+    .repo-go svg { width: 16px; height: 16px; }
+    .all-repos { margin-top: 20px; }
+
+    /* ---------- Working notes ---------- */
+    .notes { list-style: none; counter-reset: note; margin-top: 48px; column-count: 2; column-gap: 48px; column-rule: 1px solid var(--hair); }
+    .notes li { counter-increment: note; break-inside: avoid; display: grid; grid-template-columns: 40px 1fr; padding: 16px 0; border-top: 1px solid var(--ink); }
+    .notes li::before { content: counter(note) "."; font-family: var(--mono); font-size: .8rem; padding-top: 4px; }
+    .notes b { display: block; font-weight: 800; font-size: 1.1rem; }
+    .notes span { color: var(--ink-2); }
+    .notes li:first-child { background: var(--film-2); padding-inline: 12px; grid-template-columns: 28px 1fr; }
+
+    /* ---------- GitHub activity ---------- */
+    .act-tb th { width: 34%; }
+    .act-tb tr:first-child th, .act-tb tr:first-child td { border-top: 0; }
+    .act-tb + div { border-top: 1px solid var(--ink); }
+    .act-body { margin-top: 40px; border: 1px solid var(--ink); }
+    .act-body > div { padding: 20px; }
+    .act-body > div + div { border-top: 1px solid var(--ink); }
+    .act-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 16px; }
+    .heat-scroll { overflow-x: auto; padding-bottom: 6px; }
+    .heat { display: grid; grid-template-rows: repeat(7, 10px); grid-auto-flow: column; grid-auto-columns: 10px; gap: 3px; width: max-content; }
+    .heat i { background: var(--hair); }
+    .heat i[data-l="1"] { background: color-mix(in srgb, var(--ink) 30%, var(--film)); }
+    .heat i[data-l="2"] { background: color-mix(in srgb, var(--ink) 55%, var(--film)); }
+    .heat i[data-l="3"] { background: color-mix(in srgb, var(--ink) 78%, var(--film)); }
+    .heat i[data-l="4"] { background: var(--ink); }
+    .heat i.pad { visibility: hidden; }
+    .heat-msg { padding: 12px 0; color: var(--ink-2); }
+    .heat-msg[hidden] { display: none; }
+    .years { display: flex; align-items: end; gap: 10px; height: 140px; margin-top: 16px; }
+    .year { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: end; align-items: stretch; gap: 6px; text-align: center; }
+    .year .bar { background: var(--ink); min-height: 2px; }
+    .year .num { color: var(--ink-2); }
+
+    /* ---------- Contact ---------- */
+    .contact-copy { grid-column: 1 / 8; }
+    .contact h2 { font-size: clamp(2.4rem, 6vw, 5rem); }
+    .contact p { margin-top: 24px; max-width: 52ch; color: var(--ink-2); font-size: 1.125rem; }
+    .contact .cta { margin-top: 36px; }
+    .contact-block { grid-column: 9 / 13; align-self: end; border: 1px solid var(--ink); }
+    .contact-block .title-block tr:first-child th, .contact-block .title-block tr:first-child td { border-top: 0; }
+
+    footer { border-top: 1px solid var(--ink); }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 20px 0 28px; }
+
+    /* ---------- Gaps: facts the owner still has to supply ---------- */
+    .gap, .gap-row { display: none !important; }
+    .show-gaps .gap { display: inline-flex !important; align-items: center; gap: 6px; padding: 1px 6px; border: 1px dashed var(--ink); font-size: .8rem; font-weight: 600; color: var(--ink); }
+    .show-gaps .gap::before { content: "!"; font-weight: 600; }
+    .show-gaps .gap-row { display: revert !important; }
+    .show-gaps .gap-fallback { display: none; }
+    .show-gaps a.btn.gap-row { display: inline-flex !important; border-style: dashed; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1100px) {
+      .hero-copy { grid-column: 1 / -1; padding-bottom: 40px; }
+      .drawing { grid-column: 1 / -1; }
+      .entry-id { grid-column: 1 / 5; }
+      .entry-desc { grid-column: 5 / 13; }
+      .entry-layers { grid-column: 5 / 10; margin-top: 16px; }
+      .entry-foot { grid-column: 10 / 13; margin-top: 16px; }
+      .contact-copy { grid-column: 1 / -1; }
+      .contact-block { grid-column: 1 / 8; margin-top: 48px; }
+    }
+    @media (max-width: 760px) {
+      .top .wrap { flex-wrap: wrap; row-gap: 0; padding-top: 8px; }
+      .menu { order: 3; width: 100%; margin-inline: -12px; }
+      .menu ul { overflow-x: auto; scrollbar-width: none; }
+      .menu ul::-webkit-scrollbar { display: none; }
+      .menu a { white-space: nowrap; font-size: .8rem; }
+      .sheet { scroll-margin-top: 108px; padding-bottom: 72px; }
+      .ruler { margin-bottom: 36px; }
+      .drawing-body { grid-template-columns: 1fr; }
+      .figure { border-right: 0; border-bottom: 1px solid var(--ink); }
+      .figure svg { max-height: 380px; margin-inline: auto; }
+      .entry-id, .entry-desc, .entry-layers, .entry-foot { grid-column: 1 / -1; }
+      .entry-desc { margin-top: 12px; }
+      .entry-foot { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+      .repos a { display: flex; flex-direction: column; gap: 6px; }
+      .repo-go { justify-self: start; }
+      .notes { column-count: 1; }
+      .contact-block { grid-column: 1 / -1; }
+    }
+    @media (max-width: 480px) {
+      .tabs button { padding: 0 8px; gap: 6px; font-size: .9rem; }
+      .tabs .num { display: none; }
+      .cta .btn { flex: 1 1 100%; }
+      .entry-layers div { grid-template-columns: 8em 1fr; }
+      .seg button { min-width: 36px; }
+      .brand span { display: none; }
+      .menu a { padding-inline: 7px; font-size: .74rem; letter-spacing: .04em; }
+    }
+    @media (pointer: coarse) {
+      .icon-btn { width: 44px; height: 44px; }
+      .seg button { min-height: 44px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0s !important; animation: none !important; }
+    }
+  </style>
 </head>
-
 <body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
 
-  <header class="site-header">
-    <nav class="navbar" aria-label="Navegación principal">
-      <a class="logo" href="#inicio">TN<span class="logo-dot">.</span></a>
-
-      <button class="nav-toggle" type="button" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu"
-        aria-label="Abrir menú de navegación">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-
-      <div class="nav-menu" id="nav-menu" data-open="false">
-        <ul class="nav-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#main"><b>Garcia Jhon Lucas</b><span data-i18n="brand.role">Desarrollador Full Stack</span></a>
+      <nav class="menu" data-i18n-attr="aria-label:a11y.nav" aria-label="Secciones">
+        <ul>
+          <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+          <li><a href="#como-trabajo" data-i18n="nav.notes">Cómo trabajo</a></li>
+          <li><a href="#actividad" data-i18n="nav.activity">Actividad</a></li>
+          <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
         </ul>
-        <a class="btn btn-primary nav-cta" href="#contacto">Contáctame</a>
+      </nav>
+      <div class="controls">
+        <div class="seg" role="group" data-i18n-attr="aria-label:a11y.lang" aria-label="Idioma">
+          <button type="button" data-lang="es" aria-pressed="true">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="icon-btn" id="themeBtn" data-i18n-attr="aria-label:a11y.theme" aria-label="Cambiar entre tema claro y oscuro">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
+    <!-- Sheet 1: the claim and the exploded drawing -->
+    <section class="sheet hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="ruler" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
+        <div class="grid">
+          <div class="hero-copy">
+            <h1 id="hero-title" data-i18n="hero.title">Construyo sistemas completos, capa por capa.</h1>
+            <p class="lead" data-i18n="hero.lead">Soy Garcia Jhon Lucas, desarrollador Full Stack. Trabajo en todas las capas de un sistema de gestión: la interfaz, el backend, la base de datos y la nube. Más de 5 años en equipos que hacen software que se usa todos los días, en salud y alquileres.</p>
+            <div class="cta">
+              <a class="btn btn-ink" href="https://www.linkedin.com/in/garciajhonlucas/" target="_blank" rel="noopener">
+                <span data-i18n="cta.linkedin">Escribime por LinkedIn</span><span class="vh" data-i18n="a11y.newtab"> (se abre en una pestaña nueva)</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+              <a class="btn btn-line" href="#proyectos" data-i18n="cta.projects">Ver proyectos</a>
+            </div>
+            <p class="availability"><i aria-hidden="true"></i><span class="label" data-i18n="hero.available">Disponible para nuevos proyectos</span></p>
+          </div>
 
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="inicio">
-      <div class="container hero-inner">
-        <p class="hero-badge">
-          <span class="status-dot" aria-hidden="true"></span>
-          Disponible para nuevos proyectos
-        </p>
+          <div class="drawing" id="sheet">
+            <div class="tabs" role="tablist" data-i18n-attr="aria-label:a11y.tabs" aria-label="Proyecto en la lámina">
+              <button type="button" role="tab" id="tab-0" aria-selected="true" aria-controls="sheet-panel" data-index="0"><span class="num">01</span><span data-i18n="p1.name">Hospital</span></button>
+              <button type="button" role="tab" id="tab-1" aria-selected="false" aria-controls="sheet-panel" data-index="1" tabindex="-1"><span class="num">02</span><span data-i18n="p2.name">Consultorios</span></button>
+              <button type="button" role="tab" id="tab-2" aria-selected="false" aria-controls="sheet-panel" data-index="2" tabindex="-1"><span class="num">03</span><span data-i18n="p3.name">Alquileres</span></button>
+            </div>
+            <div class="drawing-body" id="sheet-panel" role="tabpanel" aria-labelledby="tab-0">
+              <figure class="figure">
+                <svg viewBox="0 0 520 590" role="img" aria-labelledby="fig-cap">
+                  <defs>
+                    <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                      <line x1="0" y1="0" x2="0" y2="5" stroke="currentColor" stroke-width="1" />
+                    </pattern>
+                  </defs>
+                  <line class="axis" x1="200" y1="6" x2="200" y2="584" />
 
-        <h1 class="hero-title">
-          Hola, soy
-          <span class="hero-name">garcia Jhon Lucas</span>
-        </h1>
-        <p class="hero-role">Desarrollador Full Stack · Backend & DevOps · IA aplicada</p>
+                  <!-- Painted bottom to top: infrastructure, data, logic, interface -->
+                  <g class="plate" data-part="4">
+                    <g class="plate-move">
+                      <polygon class="plate-side" points="50,480 200,555 200,569 50,494" />
+                      <polygon class="plate-side" points="200,555 350,480 350,494 200,569" />
+                      <polygon class="plate-top" points="200,405 350,480 200,555 50,480" />
+                      <g class="glyph" transform="matrix(75 37.5 -75 37.5 200 480)">
+                        <rect x="-.7" y="-.72" width="1.4" height=".38" /><rect x="-.7" y="-.19" width="1.4" height=".38" /><rect x="-.7" y=".34" width="1.4" height=".38" />
+                        <circle cx=".48" cy="-.53" r=".05" /><circle cx=".48" cy="0" r=".05" /><circle cx=".48" cy=".53" r=".05" />
+                      </g>
+                      <circle class="leader-dot" cx="245" cy="502.5" r="2.5" />
+                    </g>
+                  </g>
+                  <g class="plate" data-part="3">
+                    <g class="plate-move">
+                      <polygon class="plate-side" points="50,350 200,425 200,439 50,364" />
+                      <polygon class="plate-side" points="200,425 350,350 350,364 200,439" />
+                      <polygon class="plate-top" points="200,275 350,350 200,425 50,350" />
+                      <g class="glyph" transform="matrix(75 37.5 -75 37.5 200 350)">
+                        <rect x="-.7" y="-.7" width="1.4" height="1.4" />
+                        <line x1="-.7" y1="-.35" x2=".7" y2="-.35" /><line x1="-.7" y1="0" x2=".7" y2="0" /><line x1="-.7" y1=".35" x2=".7" y2=".35" />
+                        <line x1="-.2" y1="-.7" x2="-.2" y2=".7" />
+                      </g>
+                      <circle class="leader-dot" cx="245" cy="372.5" r="2.5" />
+                    </g>
+                  </g>
+                  <g class="plate" data-part="2">
+                    <g class="plate-move">
+                      <polygon class="plate-side" points="50,220 200,295 200,309 50,234" />
+                      <polygon class="plate-side" points="200,295 350,220 350,234 200,309" />
+                      <polygon class="plate-top" points="200,145 350,220 200,295 50,220" />
+                      <g class="glyph" transform="matrix(75 37.5 -75 37.5 200 220)">
+                        <line x1="-.5" y1="-.5" x2=".5" y2="-.3" /><line x1="-.5" y1="-.5" x2="-.2" y2=".4" /><line x1=".5" y1="-.3" x2="-.2" y2=".4" /><line x1="-.2" y1=".4" x2=".5" y2=".5" />
+                        <circle cx="-.5" cy="-.5" r=".13" /><circle cx=".5" cy="-.3" r=".13" /><circle cx="-.2" cy=".4" r=".13" /><circle cx=".5" cy=".5" r=".13" />
+                      </g>
+                      <circle class="leader-dot" cx="245" cy="242.5" r="2.5" />
+                    </g>
+                  </g>
+                  <g class="plate" data-part="1">
+                    <g class="plate-move">
+                      <polygon class="plate-side" points="50,90 200,165 200,179 50,104" />
+                      <polygon class="plate-side" points="200,165 350,90 350,104 200,179" />
+                      <polygon class="plate-top" points="200,15 350,90 200,165 50,90" />
+                      <g class="glyph" transform="matrix(75 37.5 -75 37.5 200 90)">
+                        <rect x="-.7" y="-.7" width="1.4" height="1.4" /><line x1="-.7" y1="-.45" x2=".7" y2="-.45" />
+                        <rect x="-.58" y="-.3" width=".42" height=".86" />
+                        <line x1=".02" y1="-.2" x2=".55" y2="-.2" /><line x1=".02" y1=".05" x2=".55" y2=".05" /><line x1=".02" y1=".3" x2=".38" y2=".3" />
+                      </g>
+                      <circle class="leader-dot" cx="245" cy="112.5" r="2.5" />
+                    </g>
+                  </g>
 
-        <p class="hero-pitch">
-          Construyo sistemas backend robustos y APIs escalables, automatizo su
-          despliegue con prácticas DevOps y sumo IA donde aporta valor real al
-          producto, sin perder de vista la experiencia del usuario final.
-        </p>
+                  <line class="leader" data-leader="1" x1="245" y1="112.5" x2="455" y2="90" />
+                  <line class="leader" data-leader="2" x1="245" y1="242.5" x2="455" y2="220" />
+                  <line class="leader" data-leader="3" x1="245" y1="372.5" x2="455" y2="350" />
+                  <line class="leader" data-leader="4" x1="245" y1="502.5" x2="455" y2="480" />
+                  <g class="balloon" data-part="1"><circle cx="470" cy="90" r="15" /><text x="470" y="90">1</text></g>
+                  <g class="balloon" data-part="2"><circle cx="470" cy="220" r="15" /><text x="470" y="220">2</text></g>
+                  <g class="balloon" data-part="3"><circle cx="470" cy="350" r="15" /><text x="470" y="350">3</text></g>
+                  <g class="balloon" data-part="4"><circle cx="470" cy="480" r="15" /><text x="470" y="480">4</text></g>
+                </svg>
+                <figcaption class="label" id="fig-cap"><span data-i18n="fig.caption">Despiece de</span> <span id="figProject">Hospital</span><span data-i18n="fig.caption2">: las cuatro capas en las que trabajé.</span></figcaption>
+              </figure>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contacto">Hablemos</a>
-          <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
+              <div class="parts">
+                <table class="parts-table">
+                  <caption class="vh" data-i18n="parts.caption">Lista de piezas</caption>
+                  <thead>
+                    <tr><th class="label" scope="col" data-i18n="parts.no">N.º</th><th class="label" scope="col" data-i18n="parts.part">Pieza</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr data-part="1"><td class="num">1</td><td><button type="button" class="part-btn" data-i18n="part.1">Interfaz</button><div class="spec" id="spec-1">Angular</div></td></tr>
+                    <tr data-part="2"><td class="num">2</td><td><button type="button" class="part-btn" data-i18n="part.2">Lógica de negocio</button><div class="spec" id="spec-2">.NET Core</div></td></tr>
+                    <tr data-part="3"><td class="num">3</td><td><button type="button" class="part-btn" data-i18n="part.3">Datos</button><div class="spec" id="spec-3">SQL</div></td></tr>
+                    <tr data-part="4"><td class="num">4</td><td><button type="button" class="part-btn" data-i18n="part.4">Infraestructura</button><div class="spec" id="spec-4">AWS</div></td></tr>
+                  </tbody>
+                </table>
+
+                <table class="title-block">
+                  <caption class="vh" data-i18n="tb.caption">Rótulo de la lámina</caption>
+                  <tr><th class="label" scope="row" data-i18n="tb.project">Proyecto</th><td id="tbProject">Hospital — <span data-i18n="p1.type">Software hospitalario</span></td></tr>
+                  <tr><th class="label" scope="row" data-i18n="tb.role">Mi rol</th><td><span data-i18n="tb.roleValue">Desarrollador Full Stack, en equipo</span></td></tr>
+                  <tr><th class="label" scope="row" data-i18n="tb.layers">Capas</th><td><span data-i18n="tb.layersValue">Las cuatro: 1 · 2 · 3 · 4</span></td></tr>
+                  <tr><th class="label" scope="row" data-i18n="tb.users">Lo usan</th><td id="tbUsers"><span data-i18n="u.health">Médicos, licenciados y personal administrativo</span></td></tr>
+                  <tr><th class="label" scope="row" data-i18n="tb.sheet">Lámina</th><td class="num" id="tbSheet">01 / 03</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ PROYECTOS DESTACADOS ============ -->
-    <section class="proyectos" id="proyectos">
-      <div class="container">
-        <p class="section-eyebrow">Trabajo seleccionado</p>
-        <h2 class="section-title reveal">Proyectos destacados</h2>
-        <div class="projects-grid">
-          <!-- TODO: reemplazar con datos reales del proyecto 1
-          <article class="project-card reveal">
-            <h3 class="project-title">Plataforma de Pagos con Arquitectura Event-Driven</h3>
-            <p class="project-desc">
-              Backend de microservicios comunicados por colas de mensajes,
-              con procesamiento asíncrono e idempotencia para operaciones
-              críticas de pago.
-            </p>
-            <p class="project-tags">2026 — Backend, Microservicios</p>
-            <a class="project-link" href="#"
-              aria-label="Ver detalle del proyecto de plataforma de pagos (enlace de ejemplo)">
-              Ver proyecto <span aria-hidden="true">→</span>
-            </a>
-          </article>-->
+    <!-- Sheet 2: projects schedule -->
+    <section class="sheet" id="proyectos" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="ruler" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
+        <h2 id="projects-title" data-i18n="projects.title">Proyectos</h2>
+        <p class="intro" data-i18n="projects.intro">Tres sistemas en producción en los que trabajé como desarrollador Full Stack, dentro de equipos y en todas las capas. Por confidencialidad de los clientes, el código y las demos son privados.</p>
+
+        <div class="schedule">
+          <article class="entry grid">
+            <div class="entry-id"><h3 data-i18n="p1.name">Hospital</h3><p class="entry-type" data-i18n="p1.type">Software hospitalario</p></div>
+            <p class="entry-desc" data-i18n="p1.desc">Plataforma integral de gestión hospitalaria: pacientes, historia clínica y operación del día a día.</p>
+            <dl class="entry-layers">
+              <div><dt class="label" data-i18n="part.1">Interfaz</dt><dd>Angular</dd></div>
+              <div><dt class="label" data-i18n="part.2">Lógica de negocio</dt><dd>.NET Core</dd></div>
+              <div><dt class="label" data-i18n="part.3">Datos</dt><dd>SQL</dd></div>
+              <div><dt class="label" data-i18n="part.4">Infraestructura</dt><dd>AWS</dd></div>
+              <div><dt class="label" data-i18n="tb.users">Lo usan</dt><dd data-i18n="u.health">Médicos, licenciados y personal administrativo</dd></div>
+            </dl>
+            <div class="entry-foot">
+              <span class="status label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="11" width="14" height="10"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-i18n="status.private">Código privado</span></span>
+              <button type="button" class="link-btn" data-show="0"><span data-i18n="btn.breakdown">Ver despiece</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+            </div>
+          </article>
+          <article class="entry grid">
+            <div class="entry-id"><h3 data-i18n="p2.name">Consultorios</h3><p class="entry-type" data-i18n="p2.type">Software médico</p></div>
+            <p class="entry-desc" data-i18n="p2.desc">Sistema web para la gestión de consultorios y atención médica.</p>
+            <dl class="entry-layers">
+              <div><dt class="label" data-i18n="part.1">Interfaz</dt><dd>HTML · JavaScript</dd></div>
+              <div><dt class="label" data-i18n="part.2">Lógica de negocio</dt><dd>Laravel · PHP</dd></div>
+              <div><dt class="label" data-i18n="part.3">Datos</dt><dd>MySQL</dd></div>
+              <div><dt class="label" data-i18n="part.4">Infraestructura</dt><dd>DigitalOcean</dd></div>
+              <div><dt class="label" data-i18n="tb.users">Lo usan</dt><dd data-i18n="u.health">Médicos, licenciados y personal administrativo</dd></div>
+            </dl>
+            <div class="entry-foot">
+              <span class="status label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="11" width="14" height="10"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-i18n="status.private">Código privado</span></span>
+              <button type="button" class="link-btn" data-show="1"><span data-i18n="btn.breakdown">Ver despiece</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+            </div>
+          </article>
+          <article class="entry grid">
+            <div class="entry-id"><h3 data-i18n="p3.name">Alquileres</h3><p class="entry-type" data-i18n="p3.type">Software de alquileres</p></div>
+            <p class="entry-desc" data-i18n="p3.desc">Gestión de alquileres: contratos, cobros y seguimiento de propiedades.</p>
+            <dl class="entry-layers">
+              <div><dt class="label" data-i18n="part.1">Interfaz</dt><dd>Blazor</dd></div>
+              <div><dt class="label" data-i18n="part.2">Lógica de negocio</dt><dd>.NET Core</dd></div>
+              <div><dt class="label" data-i18n="part.3">Datos</dt><dd>SQL</dd></div>
+              <div><dt class="label" data-i18n="part.4">Infraestructura</dt><dd>Azure</dd></div>
+              <div><dt class="label" data-i18n="tb.users">Lo usan</dt><dd data-i18n="u.admin">Personal administrativo</dd></div>
+            </dl>
+            <div class="entry-foot">
+              <span class="status label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="11" width="14" height="10"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-i18n="status.private">Código privado</span></span>
+              <button type="button" class="link-btn" data-show="2"><span data-i18n="btn.breakdown">Ver despiece</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+            </div>
+          </article>
         </div>
-      </div>
-    </section>
 
-    <!-- ============ SOBRE MÍ / EXPERIENCIA ============ -->
-    <section class="sobre-mi" id="sobre-mi">
-      <div class="container about-grid">
-        <div class="about-bio">
-          <p class="section-eyebrow">Quién soy</p>
-          <h2 class="section-title reveal">Sobre mí</h2>
-          <p class="reveal">
-            Soy desarrollador full stack con foco en backend, infraestructura
-            y, cada vez más, en IA aplicada a productos reales. Me interesa
-            diseñar sistemas que escalen sin dramas, automatizar todo lo que
-            se pueda automatizar y usar modelos de lenguaje donde realmente
-            resuelven un problema, no como moda.
-          </p>
+        <div class="oss-head">
+          <h3 data-i18n="oss.title">Código abierto</h3>
+          <p class="intro" data-i18n="oss.intro">Proyectos públicos que podés revisar línea por línea.</p>
         </div>
-
-        <div class="about-timeline">
-          <h3 class="timeline-heading reveal">Experiencia</h3>
-          <ol class="timeline-list">
-
-            <!-- TODO: reemplazar con datos reales de experiencia 1 -->
-            <li class="timeline-item reveal">
-              <p class="timeline-role">Arquitecto de Software (Backend & Cloud)</p>
-              <p class="timeline-company">Empresa Ejemplo Uno</p>
-              <p class="timeline-dates">2024 — Presente</p>
-            </li>
-
-            <!-- TODO: reemplazar con datos reales de experiencia 2 -->
-            <li class="timeline-item reveal">
-              <p class="timeline-role">Desarrollador Backend Senior</p>
-              <p class="timeline-company">Empresa Ejemplo Dos</p>
-              <p class="timeline-dates">2022 — 2024</p>
-            </li>
-
-            <!-- TODO: reemplazar con datos reales de experiencia 3 -->
-            <li class="timeline-item reveal">
-              <p class="timeline-role">Desarrollador Full Stack</p>
-              <p class="timeline-company">Empresa Ejemplo Tres</p>
-              <p class="timeline-dates">2020 — 2022</p>
-            </li>
-
-            <!-- TODO: reemplazar con datos reales de experiencia 4 -->
-            <li class="timeline-item reveal">
-              <p class="timeline-role">Desarrollador Web Junior</p>
-              <p class="timeline-company">Empresa Ejemplo Cuatro</p>
-              <p class="timeline-dates">2018 — 2020</p>
-            </li>
-
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ HABILIDADES ============ -->
-    <section class="habilidades" id="habilidades">
-      <div class="container">
-        <p class="section-eyebrow">Stack técnico</p>
-        <h2 class="section-title reveal">Habilidades</h2>
-
-        <ul class="skills-list">
-          <li class="skill-pill reveal">HTML</li>
-          <li class="skill-pill reveal">JavaScript</li>
-          <li class="skill-pill reveal">Node.js</li>
-          <li class="skill-pill reveal">Angular</li>
-          <li class="skill-pill reveal">.NET Core</li>
-          <li class="skill-pill reveal">SQL Server</li>
-          <li class="skill-pill reveal">MongoDB</li>
+        <ul class="repos">
+          <li><a href="https://github.com/GarciaJhonLucas/paper-overlay" target="_blank" rel="noopener">
+            <span class="repo-name">PaperOverlay</span>
+            <span class="repo-type label" data-i18n="o1.type">App de escritorio · Windows · 2026</span>
+            <span class="repo-desc" data-i18n="o1.desc">App de bandeja que da a toda la pantalla un look de papel E-Ink: escala de grises con perfiles de tono y capa de grano, vía la Magnification API de Windows. Portable y sin dependencias.</span>
+            <span class="repo-stack">C# · Win32 API · PowerShell</span>
+            <span class="repo-go"><span data-i18n="btn.code">Ver código</span><span class="vh" data-i18n="a11y.newtab"> (se abre en una pestaña nueva)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </a></li>
+          <li><a href="https://github.com/GarciaJhonLucas/SU7G5" target="_blank" rel="noopener">
+            <span class="repo-name">SU7G5 · REST API</span>
+            <span class="repo-type label" data-i18n="o2.type">API REST · proyecto en equipo · 2023</span>
+            <span class="repo-desc" data-i18n="o2.desc">API REST con usuarios, login y CRUD completo, construida con Express y Prisma en TypeScript, con seeds y migraciones.</span>
+            <span class="repo-stack">TypeScript · Node.js · Express · Prisma</span>
+            <span class="repo-go"><span data-i18n="btn.code">Ver código</span><span class="vh" data-i18n="a11y.newtab"> (se abre en una pestaña nueva)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </a></li>
+          <li><a href="https://github.com/GarciaJhonLucas/django-portfolio" target="_blank" rel="noopener">
+            <span class="repo-name">Django Portfolio</span>
+            <span class="repo-type label" data-i18n="o3.type">Web full stack · 2022</span>
+            <span class="repo-desc" data-i18n="o3.desc">Portfolio de proyectos con backend en Django y plantillas propias, preparado para desplegar con Procfile.</span>
+            <span class="repo-stack">Python · Django · HTML · CSS · JavaScript</span>
+            <span class="repo-go"><span data-i18n="btn.code">Ver código</span><span class="vh" data-i18n="a11y.newtab"> (se abre en una pestaña nueva)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </a></li>
         </ul>
+        <p class="all-repos"><a class="text-link" href="https://www.github.com/garciajhonlucas?tab=repositories" target="_blank" rel="noopener"><span data-i18n="oss.all">Ver todos los repositorios en GitHub</span><span class="vh" data-i18n="a11y.newtab"> (se abre en una pestaña nueva)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></p>
       </div>
     </section>
 
-    <!-- ============ SERVICIOS ============ -->
-    <section class="servicios" id="servicios">
-      <div class="container">
-        <p class="section-eyebrow">Cómo puedo ayudar</p>
-        <h2 class="section-title reveal">Servicios</h2>
+    <!-- Sheet 3: general notes -->
+    <section class="sheet" id="como-trabajo" aria-labelledby="notes-title">
+      <div class="wrap">
+        <div class="ruler" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
+        <h2 id="notes-title" data-i18n="notes.title">Cómo trabajo</h2>
+        <p class="intro" data-i18n="notes.intro">Lo que traigo a cada proyecto, más allá del stack.</p>
+        <ol class="notes">
+          <li><div><b data-i18n="n1.t">Veo el sistema completo</b><span data-i18n="n1.d">Entiendo el negocio y cómo encaja cada capa, hablo con vos y con el equipo, y acompaño el trabajo de la primera charla al sistema funcionando.</span></div></li>
+          <li><div><b data-i18n="n2.t">Arquitectura limpia</b><span data-i18n="n2.d">Diseño sistemas mantenibles, con capas claras y responsabilidades bien separadas.</span></div></li>
+          <li><div><b data-i18n="n3.t">APIs y backend robusto</b><span data-i18n="n3.d">REST APIs seguras y performantes en .NET Core, Laravel y Go.</span></div></li>
+          <li><div><b data-i18n="n4.t">Modelado de datos</b><span data-i18n="n4.d">Bases relacionales y NoSQL bien diseñadas, consultas optimizadas e informes con Power BI.</span></div></li>
+          <li><div><b data-i18n="n5.t">Frontend moderno</b><span data-i18n="n5.d">Interfaces claras y responsivas con Angular, Blazor y JavaScript.</span></div></li>
+          <li><div><b data-i18n="n6.t">Cloud y DevOps</b><span data-i18n="n6.d">Despliegues en AWS y servidores Linux, automatización y entornos estables.</span></div></li>
+          <li><div><b data-i18n="n7.t">IA aplicada</b><span data-i18n="n7.d">Integro modelos como Claude y Gemini en productos y en mi flujo de desarrollo.</span></div></li>
+          <li><div><b data-i18n="n8.t">Dominio del sector salud</b><span data-i18n="n8.d">Experiencia real en software médico: datos sensibles, flujos clínicos y cumplimiento.</span></div></li>
+        </ol>
+      </div>
+    </section>
 
-        <div class="services-grid">
-
-          <article class="service-card reveal">
-            <h3 class="service-title">Desarrollo Backend & APIs</h3>
-            <p class="service-desc">
-              APIs REST o GraphQL sólidas, bien probadas y documentadas, con
-              foco en rendimiento y facilidad de integración.
-            </p>
-            <p class="service-meta">2–4 semanas · Proyecto individual</p>
-          </article>
-
-          <article class="service-card reveal">
-            <h3 class="service-title">Arquitectura Cloud & DevOps</h3>
-            <p class="service-desc">
-              Infraestructura como código, contenedores y pipelines de CI/CD
-              para desplegar con confianza y escalar sin fricción.
-            </p>
-            <p class="service-meta">1–3 semanas · Consultoría</p>
-          </article>
-
-          <article class="service-card reveal">
-            <h3 class="service-title">Integración de IA en Productos</h3>
-            <p class="service-desc">
-              Incorporación de modelos de lenguaje a flujos existentes:
-              asistentes, automatizaciones y búsqueda con contexto real.
-            </p>
-            <p class="service-meta">3–6 semanas · Proyecto en equipo</p>
-          </article>
-
-          <article class="service-card reveal">
-            <h3 class="service-title">Auditoría técnica</h3>
-            <p class="service-desc">
-              Revisión de arquitectura, rendimiento e infraestructura con
-              recomendaciones concretas y priorizadas.
-            </p>
-            <p class="service-meta">1 semana · Informe detallado</p>
-          </article>
-
+    <!-- Sheet 4: GitHub activity -->
+    <section class="sheet" id="actividad" aria-labelledby="activity-title">
+      <div class="wrap">
+        <div class="ruler" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
+        <h2 id="activity-title" data-i18n="act.title">Actividad en GitHub</h2>
+        <div class="act-body">
+          <table class="title-block act-tb">
+            <caption class="vh" data-i18n="act.tbCaption">Resumen de la actividad</caption>
+            <tr><th class="label" scope="row" data-i18n="act.total">Contribuciones</th><td class="num" id="ghTotal">7,2k</td></tr>
+            <tr><th class="label" scope="row" data-i18n="act.repos">Repositorios públicos</th><td class="num" id="ghRepos">20</td></tr>
+            <tr><th class="label" scope="row" data-i18n="act.since">Activo desde</th><td class="num" id="ghSince">2018</td></tr>
+          </table>
+          <div>
+            <div class="act-head">
+              <span><b id="ghLastYear">2.281</b> <span data-i18n="act.lastYear">contribuciones en el último año</span></span>
+              <a class="text-link" href="https://www.github.com/garciajhonlucas/" target="_blank" rel="noopener"><span data-i18n="act.profile">Ver perfil en GitHub</span><span class="vh" data-i18n="a11y.newtab"> (se abre en una pestaña nueva)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+            <div class="heat-scroll"><div class="heat" id="heat" role="img" data-i18n-attr="aria-label:act.heatLabel" aria-label="Contribuciones diarias en GitHub durante el último año"></div></div>
+            <p class="heat-msg" id="heatMsg" role="status" data-i18n="act.loading">Cargando la actividad diaria desde GitHub…</p>
+          </div>
+          <div>
+            <span class="label" data-i18n="act.perYear">Contribuciones por año</span>
+            <div class="years" id="years"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ CTA BANNER ============ -->
-    <section class="cta-banner" id="hablemos">
-      <div class="container cta-banner-inner">
-        <p class="cta-banner-text reveal">
-          ¿Tienes un proyecto en mente? Conversemos y veamos cómo darle forma.
-        </p>
-        <a class="btn btn-primary" href="#contacto">Escríbeme</a>
+    <!-- Sheet 5: contact -->
+    <section class="sheet contact" id="contacto" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="ruler" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
+        <div class="grid">
+          <div class="contact-copy">
+            <h2 id="contact-title" data-i18n="contact.title">¿Construimos algo juntos?</h2>
+            <p data-i18n="contact.text">Escribime por LinkedIn y contame qué querés construir, para cuándo lo necesitás y quién lo va a usar. Si buscás sumarme a tu equipo, contame del puesto. Respondo rápido.</p>
+            <div class="cta">
+              <a class="btn btn-ink" href="https://www.linkedin.com/in/garciajhonlucas/" target="_blank" rel="noopener">
+                <span data-i18n="cta.linkedin">Escribime por LinkedIn</span><span class="vh" data-i18n="a11y.newtab"> (se abre en una pestaña nueva)</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+              <a class="btn btn-line gap-row" id="cvLink" href="cv/garcia-jhon-lucas-cv.pdf" download>
+                <span data-i18n="cta.cv">Descargar CV (PDF)</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>
+                <span class="gap" data-i18n="gap.cv">Pendiente: subir el PDF</span>
+              </a>
+            </div>
+            <p><a class="text-link" href="https://www.github.com/garciajhonlucas/" target="_blank" rel="noopener"><span data-i18n="contact.github">Ver mi código en GitHub</span><span class="vh" data-i18n="a11y.newtab"> (se abre en una pestaña nueva)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a></p>
+          </div>
+          <div class="contact-block">
+            <table class="title-block">
+              <caption class="vh" data-i18n="tb.caption">Rótulo de la lámina</caption>
+              <tr><th class="label" scope="row" data-i18n="tb.owner">Responsable</th><td class="owner">Garcia Jhon Lucas</td></tr>
+              <tr><th class="label" scope="row" data-i18n="tb.status">Estado</th><td data-i18n="hero.available">Disponible para nuevos proyectos</td></tr>
+              <tr><th class="label" scope="row" data-i18n="tb.reply">Respuesta</th><td data-i18n="tb.replyValue">Rápida, por LinkedIn</td></tr>
+              <tr><th class="label" scope="row" data-i18n="tb.sheet">Lámina</th><td class="num">05 / 05</td></tr>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- ============ FOOTER / CONTACTO ============ -->
-  <footer class="site-footer" id="contacto">
-    <div class="container footer-inner">
-
-      <div class="footer-brand">
-        <a class="logo" href="#inicio">TN<span class="logo-dot">.</span></a>
-        <p class="footer-tagline">Desarrollo proyectos con mira hacia el futuro.</p>
-      </div>
-
-      <nav class="footer-nav" aria-label="Navegación del pie de página">
-        <ul class="nav-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#habilidades">Habilidades</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-
-      <div class="footer-contact">
-        <h3 class="footer-heading">Contacto</h3>
-        <ul class="footer-contact-list">
-          <li>
-            <a href="mailto:tu@email.com">hola@garciajhonlucas.com</a>
-          </li>
-          <li>
-            <a href="https://linkedin.com/in/garciajhonlucas" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://github.com/garciajhonlucas" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="container footer-bottom">
-      <p>© 2026 garcia Jhon Lucas. Todos los derechos reservados.</p>
+  <footer>
+    <div class="wrap">
+      <span class="label">© <span id="year">2026</span> Garcia Jhon Lucas</span>
+      <a class="label" href="#main" data-i18n="footer.top">Volver arriba</a>
     </div>
   </footer>
 
-</body>
+  <script>
+    // ---------- Content that changes with the selected sheet ----------
+    const PROJECTS = [
+      { name: "p1.name", type: "p1.type", users: "u.health", parts: ["Angular", ".NET Core", "SQL", "AWS"] },
+      { name: "p2.name", type: "p2.type", users: "u.health", parts: ["HTML · JavaScript", "Laravel · PHP", "MySQL", "DigitalOcean"] },
+      { name: "p3.name", type: "p3.type", users: "u.admin", parts: ["Blazor", ".NET Core", "SQL", "Azure"] },
+    ];
 
+    // English copy (Spanish is read from the page itself)
+    const EN = {
+      "a11y.skip": "Skip to content",
+      "a11y.nav": "Sections",
+      "a11y.lang": "Language",
+      "a11y.theme": "Switch between light and dark theme",
+      "a11y.tabs": "Project on the sheet",
+      "a11y.newtab": " (opens in a new tab)",
+      "brand.role": "Full Stack Developer",
+      "nav.projects": "Projects",
+      "nav.notes": "How I work",
+      "nav.activity": "Activity",
+      "nav.contact": "Contact",
+      "hero.title": "I build complete systems, layer by layer.",
+      "hero.lead": "I’m Garcia Jhon Lucas, a full stack developer. I work across every layer of a management system: the interface, the backend, the database and the cloud. Over 5 years on teams making software people use every day, in healthcare and rentals.",
+      "hero.available": "Available for new projects",
+      "cta.linkedin": "Message me on LinkedIn",
+      "cta.projects": "See projects",
+      "cta.cv": "Download CV (PDF)",
+      "fig.caption": "Exploded view of",
+      "fig.caption2": ": the four layers I worked on.",
+      "parts.caption": "Parts list",
+      "parts.no": "No.",
+      "parts.part": "Part",
+      "part.1": "Interface",
+      "part.2": "Business logic",
+      "part.3": "Data",
+      "part.4": "Infrastructure",
+      "tb.caption": "Sheet title block",
+      "tb.project": "Project",
+      "tb.role": "My role",
+      "tb.roleValue": "Full stack developer, on a team",
+      "tb.layers": "Layers",
+      "tb.layersValue": "All four: 1 · 2 · 3 · 4",
+      "u.health": "Doctors, licensed health professionals and administrative staff",
+      "u.admin": "Administrative staff",
+      "tb.users": "Used by",
+      "tb.sheet": "Sheet",
+      "tb.owner": "Owner",
+      "tb.status": "Status",
+      "tb.reply": "Reply",
+      "tb.replyValue": "Fast, on LinkedIn",
+      "gap.infra": "Pending: where it’s hosted",
+      "gap.cv": "Pending: upload the PDF",
+      "projects.title": "Projects",
+      "projects.intro": "Three production systems I worked on as a full stack developer, on teams and across every layer. Client confidentiality keeps the code and demos private.",
+      "p1.name": "Hospital",
+      "p2.name": "Clinics",
+      "p3.name": "Rentals",
+      "p1.type": "Hospital software",
+      "p1.desc": "End-to-end hospital management platform: patients, medical records and day-to-day operations.",
+      "p2.type": "Medical software",
+      "p2.desc": "Web system for running medical practices and patient care.",
+      "p3.type": "Rental software",
+      "p3.desc": "Rental management: contracts, payments and property tracking.",
+      "status.private": "Private code",
+      "btn.breakdown": "View breakdown",
+      "btn.code": "View code",
+      "oss.title": "Open source",
+      "oss.intro": "Public projects you can read line by line.",
+      "oss.all": "See all repositories on GitHub",
+      "o1.type": "Desktop app · Windows · 2026",
+      "o1.desc": "A tray app that gives the whole screen an E-Ink paper look: grayscale with tone profiles and a grain layer, through the Windows Magnification API. Portable, no dependencies.",
+      "o2.type": "REST API · team project · 2023",
+      "o2.desc": "REST API with users, login and full CRUD, built with Express and Prisma in TypeScript, with seeds and migrations.",
+      "o3.type": "Full stack web · 2022",
+      "o3.desc": "Project portfolio with a Django backend and custom templates, ready to deploy with a Procfile.",
+      "notes.title": "How I work",
+      "notes.intro": "What I bring to every project, beyond the stack.",
+      "n1.t": "I see the whole system",
+      "n1.d": "I understand the business and how every layer fits, talk with you and the team, and follow the work from the first conversation to the working system.",
+      "n2.t": "Clean architecture",
+      "n2.d": "Maintainable systems with clear layers and well-separated responsibilities.",
+      "n3.t": "Solid APIs and backend",
+      "n3.d": "Secure, fast REST APIs in .NET Core, Laravel and Go.",
+      "n4.t": "Data modeling",
+      "n4.d": "Well-designed relational and NoSQL databases, optimized queries and Power BI reports.",
+      "n5.t": "Modern frontend",
+      "n5.d": "Clear, responsive interfaces with Angular, Blazor and JavaScript.",
+      "n6.t": "Cloud and DevOps",
+      "n6.d": "Deployments on AWS and Linux servers, automation and stable environments.",
+      "n7.t": "Applied AI",
+      "n7.d": "I integrate models like Claude and Gemini into products and into my development workflow.",
+      "n8.t": "Healthcare domain",
+      "n8.d": "Real experience in medical software: sensitive data, clinical workflows and compliance.",
+      "act.title": "GitHub activity",
+      "act.tbCaption": "Activity summary",
+      "act.total": "Contributions",
+      "act.repos": "Public repositories",
+      "act.since": "Active since",
+      "act.lastYear": "contributions in the last year",
+      "act.profile": "View GitHub profile",
+      "act.heatLabel": "Daily GitHub contributions over the last year",
+      "act.perYear": "Contributions per year",
+      "act.loading": "Loading daily activity from GitHub…",
+      "act.failed": "GitHub didn’t respond, so the daily activity can’t be shown. <a href=\"https://www.github.com/garciajhonlucas/\" target=\"_blank\" rel=\"noopener\">See it on my profile</a>",
+      "contact.title": "Shall we build something together?",
+      "contact.text": "Message me on LinkedIn and tell me what you want to build, when you need it and who will use it. If you’d like me on your team, tell me about the role. I reply quickly.",
+      "contact.github": "See my code on GitHub",
+      "footer.top": "Back to top",
+      "meta.title": "Garcia Jhon Lucas — Full Stack Developer",
+      "meta.desc": "Garcia Jhon Lucas, full stack developer. I work across every layer of management systems, from the interface to the cloud, with over 5 years in healthcare and rental software.",
+    };
+    // Spanish strings that only live in script
+    const ES_EXTRA = {
+      "act.failed": "GitHub no respondió y no pude mostrar la actividad diaria. <a href=\"https://www.github.com/garciajhonlucas/\" target=\"_blank\" rel=\"noopener\">Mirala en mi perfil</a>",
+      "meta.title": document.title,
+      "meta.desc": document.querySelector('meta[name="description"]').content,
+    };
+
+    const root = document.documentElement;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    // ---------- i18n ----------
+    const ES = { ...ES_EXTRA };
+    const ES_ATTR = {};
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      if (!(el.dataset.i18n in ES)) ES[el.dataset.i18n] = el.innerHTML;
+    });
+    document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
+      el.dataset.i18nAttr.split(";").forEach((pair) => {
+        const [attr, key] = pair.split(":");
+        if (!(key in ES_ATTR)) ES_ATTR[key] = el.getAttribute(attr);
+      });
+    });
+    let lang = root.dataset.lang === "en" ? "en" : "es";
+    const t = (key) => (lang === "en" && key in EN ? EN[key] : key in ES ? ES[key] : ES_ATTR[key]);
+
+    function applyLang(next) {
+      lang = next;
+      root.dataset.lang = next;
+      root.lang = next;
+      try { localStorage.setItem("lang", next); } catch (e) {}
+      document.querySelectorAll("[data-i18n]").forEach((el) => { el.innerHTML = t(el.dataset.i18n); });
+      document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
+        el.dataset.i18nAttr.split(";").forEach((pair) => {
+          const [attr, key] = pair.split(":");
+          el.setAttribute(attr, t(key));
+        });
+      });
+      document.title = t("meta.title");
+      document.querySelector('meta[name="description"]').content = t("meta.desc");
+      document.querySelectorAll(".seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === next)));
+      renderSheet(current);
+      if (ghData) renderGitHub(ghData, ghState);
+    }
+    document.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => applyLang(b.dataset.lang)));
+
+    // ---------- Theme ----------
+    document.getElementById("themeBtn").addEventListener("click", () => {
+      const next = root.dataset.theme === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+
+    // ---------- Sheet tabs ----------
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    const panel = document.getElementById("sheet-panel");
+    let current = 0;
+    function renderSheet(i) {
+      const p = PROJECTS[i];
+      p.parts.forEach((spec, k) => {
+        const cell = document.getElementById(`spec-${k + 1}`);
+        if (spec) cell.textContent = spec;
+        else cell.innerHTML = `<span class="gap">${t("gap.infra")}</span><span class="gap-fallback">—</span>`;
+      });
+      document.getElementById("tbProject").innerHTML = `${t(p.name)} — <span>${t(p.type)}</span>`;
+      document.getElementById("figProject").textContent = t(p.name);
+      document.getElementById("tbUsers").innerHTML = `<span>${t(p.users)}</span>`;
+      document.getElementById("tbSheet").textContent = `0${i + 1} / 03`;
+    }
+    function selectTab(i, focus) {
+      current = i;
+      tabs.forEach((tab, k) => {
+        const on = k === i;
+        tab.setAttribute("aria-selected", String(on));
+        tab.tabIndex = on ? 0 : -1;
+      });
+      panel.setAttribute("aria-labelledby", tabs[i].id);
+      if (focus) tabs[i].focus();
+      renderSheet(i);
+    }
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => selectTab(i, false));
+      tab.addEventListener("keydown", (e) => {
+        const step = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (e.key === "Home") { e.preventDefault(); selectTab(0, true); }
+        else if (e.key === "End") { e.preventDefault(); selectTab(tabs.length - 1, true); }
+        else if (step) { e.preventDefault(); selectTab((i + step + tabs.length) % tabs.length, true); }
+      });
+    });
+    document.querySelectorAll("[data-show]").forEach((btn) => btn.addEventListener("click", () => {
+      selectTab(Number(btn.dataset.show), false);
+      document.getElementById("sheet").scrollIntoView({ behavior: reduceMotion.matches ? "auto" : "smooth", block: "center" });
+      tabs[current].focus({ preventScroll: true });
+    }));
+
+    // ---------- State flood: one part lit everywhere at once ----------
+    const partEls = [...document.querySelectorAll("[data-part]")];
+    function setActive(n) {
+      partEls.forEach((el) => el.classList.toggle("is-active", el.dataset.part === n));
+    }
+    partEls.forEach((el) => {
+      el.addEventListener("pointerenter", () => setActive(el.dataset.part));
+      el.addEventListener("pointerleave", () => setActive(null));
+    });
+    document.querySelectorAll(".part-btn").forEach((btn) => {
+      const n = btn.closest("[data-part]").dataset.part;
+      btn.addEventListener("focus", () => setActive(n));
+      btn.addEventListener("blur", () => setActive(null));
+      btn.addEventListener("click", () => setActive(n));
+    });
+
+    // ---------- Scroll assembles the plates ----------
+    const EXPLODED = [90, 220, 350, 480];
+    const ASSEMBLED = [258, 276, 294, 312];
+    const figure = document.querySelector(".figure svg");
+    const moves = EXPLODED.map((_, k) => document.querySelector(`.plate[data-part="${k + 1}"] .plate-move`));
+    const leaders = EXPLODED.map((_, k) => document.querySelector(`[data-leader="${k + 1}"]`));
+    function assemble(p) {
+      EXPLODED.forEach((y, k) => {
+        const dy = (ASSEMBLED[k] - y) * p;
+        moves[k].setAttribute("transform", `translate(0 ${dy.toFixed(1)})`);
+        leaders[k].setAttribute("y1", (y + 22.5 + dy).toFixed(1));
+      });
+    }
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        if (reduceMotion.matches) { assemble(0); return; }
+        const r = figure.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const p = Math.min(1, Math.max(0, (vh / 2 - (r.top + r.height / 2)) / (vh * 0.5)));
+        assemble(p);
+      });
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    reduceMotion.addEventListener?.("change", onScroll);
+    onScroll();
+
+    // ---------- GitHub activity (live, with snapshot fallback) ----------
+    const GH_USER = "garciajhonlucas";
+    const GH_SNAPSHOT = {
+      repos: 20,
+      years: { 2018: 1, 2019: 17, 2020: 0, 2021: 31, 2022: 93, 2023: 1186, 2024: 1131, 2025: 2844, 2026: 1920 },
+      lastYear: 2281,
+      days: null,
+    };
+    let ghData = null, ghState = "loading";
+    const locale = () => (lang === "en" ? "en-US" : "es-AR");
+    const fmt = (n) => n.toLocaleString(locale());
+    const compact = (n) => {
+      if (n < 1000) return String(n);
+      const s = (n / 1000).toFixed(1).replace(/\.0$/, "");
+      return (lang === "en" ? s : s.replace(".", ",")) + "k";
+    };
+    const contribs = (n) => {
+      const word = lang === "en" ? (n === 1 ? "contribution" : "contributions") : (n === 1 ? "contribución" : "contribuciones");
+      return `${fmt(n)} ${word}`;
+    };
+    const isCount = (v) => Number.isFinite(v) && v >= 0;
+    function cleanYears(raw) {
+      if (!raw || typeof raw !== "object") return null;
+      const out = {};
+      for (const [y, v] of Object.entries(raw)) if (/^\d{4}$/.test(y) && isCount(v)) out[y] = v;
+      return Object.keys(out).length ? out : null;
+    }
+    function cleanDays(raw) {
+      if (!Array.isArray(raw)) return null;
+      const out = raw
+        .filter((d) => d && /^\d{4}-\d{2}-\d{2}$/.test(d.date) && isCount(d.count))
+        .map((d) => ({ date: d.date, count: d.count, level: Math.min(4, Math.max(0, Math.round(Number(d.level) || 0))) }));
+      return out.length ? out : null;
+    }
+    function renderYears(years) {
+      const box = document.getElementById("years");
+      const entries = Object.entries(years);
+      if (!entries.length) { box.innerHTML = ""; return; }
+      const max = Math.max(1, ...entries.map(([, v]) => v));
+      box.innerHTML = entries.map(([y, v]) => `
+        <div class="year" title="${y}: ${contribs(v)}">
+          <div class="bar" style="height:${Math.max(2, (v / max) * 100)}%"></div>
+          <span class="num">${y}</span>
+        </div>`).join("");
+      const total = Object.values(years).reduce((a, b) => a + b, 0);
+      document.getElementById("ghTotal").textContent = compact(total);
+      const first = entries.find(([, v]) => v > 0);
+      if (first) document.getElementById("ghSince").textContent = first[0];
+    }
+    function renderHeat(days, state) {
+      const heat = document.getElementById("heat");
+      const msg = document.getElementById("heatMsg");
+      if (!days || !days.length) {
+        heat.innerHTML = "";
+        msg.hidden = false;
+        msg.innerHTML = state === "failed" ? t("act.failed") : t("act.loading");
+        return;
+      }
+      msg.hidden = true;
+      const firstDow = new Date(days[0].date + "T00:00:00").getDay();
+      const pads = Array.from({ length: firstDow }, () => '<i class="pad"></i>').join("");
+      heat.innerHTML = pads + days.map((d) => `<i data-l="${d.level}" title="${d.date}: ${contribs(d.count)}"></i>`).join("");
+      const scroller = heat.parentElement;
+      scroller.scrollLeft = scroller.scrollWidth; // most recent weeks first on narrow screens
+    }
+    function renderGitHub(data, state) {
+      ghData = data; ghState = state;
+      document.getElementById("ghRepos").textContent = fmt(data.repos);
+      document.getElementById("ghLastYear").textContent = fmt(data.lastYear);
+      renderYears(data.years);
+      renderHeat(data.days, state);
+    }
+    const getJson = (url) => {
+      const ctl = new AbortController();
+      const timer = setTimeout(() => ctl.abort(), 8000);
+      return fetch(url, { signal: ctl.signal })
+        .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+        .finally(() => clearTimeout(timer));
+    };
+
+    // ---------- CV: the button appears on its own once the PDF is uploaded ----------
+    fetch("cv/garcia-jhon-lucas-cv.pdf", { method: "HEAD" })
+      .then((r) => {
+        if (!r.ok) return;
+        const cv = document.getElementById("cvLink");
+        cv.classList.remove("gap-row");
+        cv.querySelector(".gap")?.remove();
+      })
+      .catch(() => {});
+
+    // ---------- Start ----------
+    document.getElementById("year").textContent = new Date().getFullYear();
+    selectTab(0, false);
+    renderGitHub(GH_SNAPSHOT, "loading");
+    if (lang === "en") applyLang("en");
+    Promise.allSettled([
+      getJson(`https://api.github.com/users/${GH_USER}`),
+      getJson(`https://github-contributions-api.jogruber.de/v4/${GH_USER}`),
+      getJson(`https://github-contributions-api.jogruber.de/v4/${GH_USER}?y=last`),
+    ]).then(([user, all, last]) => {
+      const data = { ...GH_SNAPSHOT };
+      if (user.status === "fulfilled" && isCount(user.value?.public_repos)) data.repos = user.value.public_repos;
+      const years = all.status === "fulfilled" ? cleanYears(all.value?.total) : null;
+      if (years) data.years = years;
+      const days = last.status === "fulfilled" ? cleanDays(last.value?.contributions) : null;
+      if (days) {
+        data.days = days;
+        if (isCount(last.value?.total?.lastYear)) data.lastYear = last.value.total.lastYear;
+      }
+      renderGitHub(data, days ? "ok" : "failed");
+    }).catch(() => renderHeat(null, "failed"));
+  </script>
+</body>
 </html>

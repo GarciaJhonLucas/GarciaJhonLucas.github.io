@@ -1,26 +1,94 @@
-<html>
-
+<!doctype html>
+<html lang="es">
 <head>
-    <title>CSS Gallery</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="config.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") root.dataset.theme = theme;
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches) root.dataset.theme = "dark";
+        var lang = localStorage.getItem("lang");
+        if (lang !== "es" && lang !== "en") lang = (navigator.language || "es").toLowerCase().indexOf("es") === 0 ? "es" : "en";
+        root.dataset.lang = lang;
+      } catch (e) { root.dataset.lang = "es"; }
+    })();
+  </script>
+  <title>Galería — Garcia Jhon Lucas</title>
+  <meta name="description" content="Galería de fotos de Garcia Jhon Lucas." />
+  <link rel="canonical" href="https://garciajhonlucas.pe/projects/gallery/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wdth,wght@75..112.5,400..600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/site.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
 
-    <body>
-        <div id="myModal" style="z-index: 100;">
-            <span onclick="cerrarModal()"
-                style="color: #fff; position: absolute; top: 15px; right: 20px; font-size: 30px; cursor: pointer;">&times;</span>
-            <img id="imagenModal">
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/"><b>Garcia Jhon Lucas</b><span data-i18n="brand.role">Desarrollador Full Stack</span></a>
+      <nav class="menu" data-i18n-attr="aria-label:a11y.nav" aria-label="Secciones">
+        <ul>
+          <li><a href="/" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="/#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+          <li><a href="/#contacto" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="controls">
+        <div class="seg" role="group" data-i18n-attr="aria-label:a11y.lang" aria-label="Idioma">
+          <button type="button" data-lang="es" aria-pressed="true">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
-        <p class="heading">CSS Gallery</p>
-        <div class="gallery-image" id="gallery-container">
-            <!-- Las imágenes se agregarán aquí dinámicamente con JavaScript -->
-        </div>
-    </body>
-    <script src="script.js"></script>
+        <button type="button" class="icon-btn" id="themeBtn" data-i18n-attr="aria-label:a11y.theme" aria-label="Cambiar entre tema claro y oscuro">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="sheet" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="ruler" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
+        <p class="label" data-i18n="gallery.kicker">Proyecto · Galería</p>
+        <h1 id="gallery-title" data-i18n="gallery.title">Galería</h1>
+        <p class="intro" data-i18n="gallery.intro">Una colección de fotos. Tocá cualquiera para verla en grande y usá las flechas para recorrerlas.</p>
+
+        <ul class="plates" id="gallery"></ul>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="viewer" id="viewer" data-i18n-attr="aria-label:viewer.label" aria-label="Visor de fotos">
+    <div class="viewer-bar">
+      <span class="label"><span class="num" id="viewerCount">01 / 03</span> <span id="viewerName"></span></span>
+      <div class="viewer-actions">
+        <button type="button" class="icon-btn" id="prevBtn" data-i18n-attr="aria-label:viewer.prev" aria-label="Foto anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <button type="button" class="icon-btn" id="nextBtn" data-i18n-attr="aria-label:viewer.next" aria-label="Foto siguiente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <button type="button" class="icon-btn" id="closeBtn" data-i18n-attr="aria-label:viewer.close" aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+    <img id="viewerImg" alt="" />
+  </dialog>
+
+  <footer>
+    <div class="wrap">
+      <span class="label">© <span id="year">2026</span> Garcia Jhon Lucas</span>
+      <a class="label" href="/" data-i18n="footer.home">Volver al inicio</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>

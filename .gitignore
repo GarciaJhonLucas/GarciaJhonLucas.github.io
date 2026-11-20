@@ -1,0 +1,53 @@
+# ─── AI agents / assistants ───────────────────────────────
+.atl/
+.claude/
+CLAUDE.local.md
+.codegraph/
+.engram/
+.opencode/
+.cursor/
+.windsurf/
+.continue/
+.aider*
+.gemini/
+.codex/
+.copilot/
+.agents/
+skills/
+openspec/
+
+# ─── Editors / IDEs ───────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── OS files ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# ─── Environment / secrets ────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ─── Node / tooling (in case it's added later) ───
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.cache/
+dist/
+.parcel-cache/
+
+# ─── Logs / temporales ────────────────────────────────────
+*.log
+*.tmp
+*.bak
+tmp/
+temp/

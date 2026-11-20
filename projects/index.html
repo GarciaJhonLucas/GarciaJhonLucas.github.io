@@ -1,121 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/modernizr.js"></script>
-    <title>Index of /</title>
-    <style>
-        @import url("../css/fonts.css");
-        @import url("../css/fontello/css/fontello.css");
-        @import url("../css/font-awesome/css/font-awesome.min.css");
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 15px;
-            background-color: #f4f4f4;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        hr {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            border: 0;
-            border-top: 2px solid #333;
-        }
-
-        table {
-            width: 25%;
-            border-collapse: collapse;
-        }
-
-        th,
-        td {
-            border: transparent;
-            padding: 5px;
-            text-align: left;
-        }
-
-        th {
-            background-color: transparent;
-            color: #333;
-        }
-
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .me-2 {
-            padding: 8px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") root.dataset.theme = theme;
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches) root.dataset.theme = "dark";
+        var lang = localStorage.getItem("lang");
+        if (lang !== "es" && lang !== "en") lang = (navigator.language || "es").toLowerCase().indexOf("es") === 0 ? "es" : "en";
+        root.dataset.lang = lang;
+      } catch (e) { root.dataset.lang = "es"; }
+    })();
+  </script>
+  <title>Experimentos — Garcia Jhon Lucas</title>
+  <meta name="description" content="Páginas pequeñas y experimentos de Garcia Jhon Lucas: galerías, cartas y animaciones hechas con HTML, CSS y JavaScript." />
+  <link rel="canonical" href="https://garciajhonlucas.pe/projects/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wdth,wght@75..112.5,400..600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/site.css" />
+  <style>
+    /* Index list: same schedule pattern as the repos list on the main page */
+    .experiments { list-style: none; margin-top: 48px; border-top: 1px solid var(--ink); }
+    .experiments a {
+      display: grid; grid-template-columns: 4em repeat(11, minmax(0, 1fr)); column-gap: var(--gutter); align-items: baseline;
+      padding: 20px 0; border-bottom: 1px solid var(--ink); text-decoration: none;
+      transition: background-color .15s, color .15s;
+    }
+    .experiments a:hover, .experiments a:focus-visible { background: var(--mark); color: var(--on-mark); }
+    .experiments a:hover .label, .experiments a:focus-visible .label { color: var(--on-mark); }
+    .exp-num { padding-left: 4px; }
+    .exp-name { grid-column: 2 / 5; font-weight: 800; font-size: 1.3rem; line-height: 1.1; }
+    .exp-desc { grid-column: 5 / 10; color: inherit; }
+    .exp-date { grid-column: 10 / 12; }
+    .exp-go { grid-column: 12 / 13; justify-self: end; padding-right: 4px; }
+    .exp-go svg { width: 18px; height: 18px; }
+    @media (max-width: 760px) {
+      .experiments a { grid-template-columns: 3em 1fr auto; row-gap: 4px; }
+      .exp-name { grid-column: 2 / 3; }
+      .exp-go { grid-column: 3 / 4; grid-row: 1; }
+      .exp-desc, .exp-date { grid-column: 2 / 4; }
+    }
+  </style>
 </head>
-
 <body>
-    <h1>Index of /</h1>
-    <hr>
-    <i class="fa fa-folder"></i><a href="/" class="mb-2"> [directorio principal]</a>
-    <table>
-        <thead>
-            <tr>
-                <th><i class="me-2"></i>Nombre</th>
-                <th>Tamaño</th>
-                <th>Fecha de Modificación</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><i class="fa fa-folder"></i><a href="./gallery/index.html"> Gallery</a></td>
-                <td></td>
-                <td>25/05/2020 08:33:15</td>
-            </tr>
-            <tr>
-                <td><i class="fa fa-folder"></i><a href="./love/index.html"> Love</a></td>
-                <td></td>
-                <td>15/10/2021 10:48:12</td>
-            </tr>
-            <tr>
-                <td><i class="fa fa-folder"></i><a href="./yellow/index.html"> Yellow</a></td>
-                <td></td>
-                <td>21/09/2023 17:16:03</td>
-            </tr>
-            <tr>
-                <td><i class="fa fa-file"></i><a href="./valentin/index.html"> Valentin</a></td>
-                <td></td>
-                <td>13/02/2024 15:29:08</td>
-            </tr>
-            <tr>
-                <td><i class="fa fa-file"></i><a href="./san-valentin/index.html"> Declaration</a></td>
-                <td></td>
-                <td>18/08/2024 15:29:08</td>
-            </tr>
-            <tr>
-                <td><i class="fa fa-file"></i><a href="../docs/garcia_jhon_lucas_resume.pdf"> Resume</a></td>
-                <td>44 KB</td>
-                <td>19/12/2023 15:29:08</td>
-            </tr>
-            <tr>
-                <td><i class="fa fa-file"></i><a href="./love-letter/index.html"> Love Letter</a></td>
-                <td>98 KB</td>
-                <td>25/02/2024 17:29:08</td>
-            </tr>
-        </tbody>
-    </table>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-</body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
 
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="../"><b>Garcia Jhon Lucas</b><span data-i18n="brand.role">Desarrollador Full Stack</span></a>
+      <nav class="menu" data-i18n-attr="aria-label:a11y.nav" aria-label="Secciones">
+        <ul>
+          <li><a href="../" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="../#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+          <li><a href="../#contacto" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="controls">
+        <div class="seg" role="group" data-i18n-attr="aria-label:a11y.lang" aria-label="Idioma">
+          <button type="button" data-lang="es" aria-pressed="true">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="icon-btn" id="themeBtn" data-i18n-attr="aria-label:a11y.theme" aria-label="Cambiar entre tema claro y oscuro">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="sheet" aria-labelledby="exp-title">
+      <div class="wrap">
+        <div class="ruler" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
+        <p class="label" data-i18n="exp.kicker">Archivo · Experimentos</p>
+        <h1 id="exp-title" data-i18n="exp.title">Experimentos</h1>
+        <p class="intro" data-i18n="exp.intro">Páginas pequeñas que hice con HTML, CSS y JavaScript: una galería, animaciones y un wallpaper. Cada una conserva su propio estilo.</p>
+
+        <ul class="experiments">
+          <li><a href="wallpaper/portfolio-wallpaper.html">
+            <span class="num exp-num">04</span><span class="exp-name" data-i18n="e.wall.name">Wallpaper</span>
+            <span class="exp-desc" data-i18n="e.wall.desc">Fondo de pantalla 1920×1080 con mi perfil dibujado como lámina técnica.</span>
+            <span class="num exp-date">2026-11-19</span>
+            <span class="exp-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </a></li>
+          <li><a href="san-valentin/">
+            <span class="num exp-num">03</span><span class="exp-name" data-i18n="e.ask.name">Declaración</span>
+            <span class="exp-desc" data-i18n="e.ask.desc">Una pregunta con un botón “No” que no quiere ser presionado.</span>
+            <span class="num exp-date">2024-08-18</span>
+            <span class="exp-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </a></li>
+          <li><a href="love/">
+            <span class="num exp-num">02</span><span class="exp-name" data-i18n="e.rain.name">Lluvia de corazones</span>
+            <span class="exp-desc" data-i18n="e.rain.desc">Corazones que caen sin parar sobre la pantalla.</span>
+            <span class="num exp-date">2021-10-15</span>
+            <span class="exp-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </a></li>
+          <li><a href="gallery/">
+            <span class="num exp-num">01</span><span class="exp-name" data-i18n="e.gallery.name">Galería</span>
+            <span class="exp-desc" data-i18n="e.gallery.desc">Galería de fotos con visor y navegación por teclado.</span>
+            <span class="num exp-date">2020-05-25</span>
+            <span class="exp-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span class="label">© <span id="year">2026</span> Garcia Jhon Lucas</span>
+      <a class="label" href="../" data-i18n="footer.home">Volver al inicio</a>
+    </div>
+  </footer>
+
+  <script>
+    const EN = {
+      "a11y.skip": "Skip to content",
+      "a11y.nav": "Sections",
+      "a11y.lang": "Language",
+      "a11y.theme": "Switch between light and dark theme",
+      "brand.role": "Full Stack Developer",
+      "nav.home": "Home",
+      "nav.projects": "Projects",
+      "nav.contact": "Contact",
+      "exp.kicker": "Archive · Experiments",
+      "exp.title": "Experiments",
+      "exp.intro": "Small pages I made with HTML, CSS and JavaScript: a gallery, animations and a wallpaper. Each one keeps its own style.",
+      "e.wall.name": "Wallpaper",
+      "e.wall.desc": "A 1920×1080 desktop wallpaper with my profile drawn as a technical sheet.",
+      "e.ask.name": "The question",
+      "e.ask.desc": "A question with a “No” button that doesn’t want to be pressed.",
+      "e.rain.name": "Heart rain",
+      "e.rain.desc": "Hearts that keep falling across the screen.",
+      "e.gallery.name": "Gallery",
+      "e.gallery.desc": "Photo gallery with a viewer and keyboard navigation.",
+      "footer.home": "Back to home",
+    };
+    const ES = {};
+    document.querySelectorAll("[data-i18n]").forEach((el) => { ES[el.dataset.i18n] = el.textContent; });
+    document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
+      const [attr, key] = el.dataset.i18nAttr.split(":");
+      ES[key] = el.getAttribute(attr);
+    });
+
+    const root = document.documentElement;
+    function applyLang(lang) {
+      const dict = lang === "en" ? EN : ES;
+      root.dataset.lang = lang;
+      root.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = dict[el.dataset.i18n] ?? ES[el.dataset.i18n]; });
+      document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
+        const [attr, key] = el.dataset.i18nAttr.split(":");
+        el.setAttribute(attr, dict[key] ?? ES[key]);
+      });
+      document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+      document.title = lang === "en" ? "Experiments — Garcia Jhon Lucas" : "Experimentos — Garcia Jhon Lucas";
+    }
+    document.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => {
+      try { localStorage.setItem("lang", b.dataset.lang); } catch (e) {}
+      applyLang(b.dataset.lang);
+    }));
+    document.getElementById("themeBtn").addEventListener("click", () => {
+      const next = root.dataset.theme === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+    applyLang(root.dataset.lang || "es");
+  </script>
+</body>
 </html>
