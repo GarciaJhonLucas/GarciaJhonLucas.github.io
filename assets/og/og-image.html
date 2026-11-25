@@ -1,0 +1,110 @@
+<!doctype html>
+<!-- Source for /og-image.png (1200x630). Render with:
+     msedge --headless --disable-gpu --hide-scrollbars --window-size=1200,630 --screenshot=og-image.png assets/og/og-image.html -->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>OG image</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wdth,wght@75..112.5,400..600&display=swap" rel="stylesheet" />
+<style>
+  :root { --film: #eef0f2; --ink: #15171a; --ink-2: #4a5059; --mark: #e6f22a; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: var(--film); color: var(--ink); font-family: "Archivo", Arial, sans-serif; }
+  .frame { position: absolute; inset: 28px; border: 2px solid var(--ink); display: grid; grid-template-rows: 1fr 76px; }
+  .top { position: relative; }
+  .copy { position: absolute; left: 50px; top: 108px; width: 640px; }
+  .kicker { font-weight: 600; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+  h1 { margin-top: 24px; font-weight: 800; font-variation-settings: "wdth" 112; font-size: 66px; line-height: 1; letter-spacing: -.02em; }
+  mark { background: var(--mark); color: var(--ink); padding: 0 4px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  svg.fig { position: absolute; right: 64px; top: 16px; height: 460px; width: auto; color: var(--ink); }
+  .fig .axis { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 6 4 1 4; }
+  .fig .plate-top { fill: var(--film); stroke: var(--ink); stroke-width: 1.6; stroke-linejoin: round; }
+  .fig .plate-side { fill: url(#hatch); stroke: var(--ink); stroke-width: 1.6; stroke-linejoin: round; }
+  .fig .glyph * { fill: none; stroke: var(--ink); stroke-width: .022; }
+  .fig .leader { stroke: var(--ink); stroke-width: 1.2; }
+  .fig .leader-dot { fill: var(--ink); }
+  .fig .balloon circle { fill: var(--film); stroke: var(--ink); stroke-width: 1.4; }
+  .fig .balloon text { font-family: "Martian Mono", monospace; font-size: 13px; text-anchor: middle; dominant-baseline: central; fill: var(--ink); }
+  .bar { border-top: 2px solid var(--ink); display: grid; grid-template-columns: 282px repeat(4, 1fr); }
+  .bar div { padding: 14px 18px 0; border-left: 2px solid var(--ink); }
+  .bar div:first-child { border-left: 0; }
+  .bar small { display: block; font-family: "Martian Mono", monospace; font-size: 12px; color: var(--ink-2); text-transform: uppercase; }
+  .bar b { display: block; margin-top: 4px; font-size: 21px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="top">
+    <div class="copy">
+      <p class="kicker">Desarrollador Full Stack</p>
+      <h1>Software de gestión que se usa <mark>todos los días</mark>.</h1>
+    </div>
+    <svg class="fig" viewBox="0 0 520 590" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="5" stroke="currentColor" stroke-width="1" />
+        </pattern>
+      </defs>
+      <line class="axis" x1="200" y1="6" x2="200" y2="584" />
+      <g>
+        <polygon class="plate-side" points="50,480 200,555 200,569 50,494" />
+        <polygon class="plate-side" points="200,555 350,480 350,494 200,569" />
+        <polygon class="plate-top" points="200,405 350,480 200,555 50,480" />
+        <g class="glyph" transform="matrix(75 37.5 -75 37.5 200 480)">
+          <rect x="-.7" y="-.72" width="1.4" height=".38" /><rect x="-.7" y="-.19" width="1.4" height=".38" /><rect x="-.7" y=".34" width="1.4" height=".38" />
+          <circle cx=".48" cy="-.53" r=".05" /><circle cx=".48" cy="0" r=".05" /><circle cx=".48" cy=".53" r=".05" />
+        </g>
+        <circle class="leader-dot" cx="245" cy="502.5" r="2.5" />
+      </g>
+      <g>
+        <polygon class="plate-side" points="50,350 200,425 200,439 50,364" />
+        <polygon class="plate-side" points="200,425 350,350 350,364 200,439" />
+        <polygon class="plate-top" points="200,275 350,350 200,425 50,350" />
+        <g class="glyph" transform="matrix(75 37.5 -75 37.5 200 350)">
+          <rect x="-.7" y="-.7" width="1.4" height="1.4" />
+          <line x1="-.7" y1="-.35" x2=".7" y2="-.35" /><line x1="-.7" y1="0" x2=".7" y2="0" /><line x1="-.7" y1=".35" x2=".7" y2=".35" />
+          <line x1="-.2" y1="-.7" x2="-.2" y2=".7" />
+        </g>
+        <circle class="leader-dot" cx="245" cy="372.5" r="2.5" />
+      </g>
+      <g>
+        <polygon class="plate-side" points="50,220 200,295 200,309 50,234" />
+        <polygon class="plate-side" points="200,295 350,220 350,234 200,309" />
+        <polygon class="plate-top" points="200,145 350,220 200,295 50,220" />
+        <g class="glyph" transform="matrix(75 37.5 -75 37.5 200 220)">
+          <line x1="-.5" y1="-.5" x2=".5" y2="-.3" /><line x1="-.5" y1="-.5" x2="-.2" y2=".4" /><line x1=".5" y1="-.3" x2="-.2" y2=".4" /><line x1="-.2" y1=".4" x2=".5" y2=".5" />
+          <circle cx="-.5" cy="-.5" r=".13" /><circle cx=".5" cy="-.3" r=".13" /><circle cx="-.2" cy=".4" r=".13" /><circle cx=".5" cy=".5" r=".13" />
+        </g>
+        <circle class="leader-dot" cx="245" cy="242.5" r="2.5" />
+      </g>
+      <g>
+        <polygon class="plate-side" points="50,90 200,165 200,179 50,104" />
+        <polygon class="plate-side" points="200,165 350,90 350,104 200,179" />
+        <polygon class="plate-top" points="200,15 350,90 200,165 50,90" />
+        <g class="glyph" transform="matrix(75 37.5 -75 37.5 200 90)">
+          <rect x="-.7" y="-.7" width="1.4" height="1.4" /><line x1="-.7" y1="-.45" x2=".7" y2="-.45" />
+          <rect x="-.58" y="-.3" width=".42" height=".86" />
+          <line x1=".02" y1="-.2" x2=".55" y2="-.2" /><line x1=".02" y1=".05" x2=".55" y2=".05" /><line x1=".02" y1=".3" x2=".38" y2=".3" />
+        </g>
+        <circle class="leader-dot" cx="245" cy="112.5" r="2.5" />
+      </g>
+      <line class="leader" x1="245" y1="112.5" x2="455" y2="90" />
+      <line class="leader" x1="245" y1="242.5" x2="455" y2="220" />
+      <line class="leader" x1="245" y1="372.5" x2="455" y2="350" />
+      <line class="leader" x1="245" y1="502.5" x2="455" y2="480" />
+      <g class="balloon"><circle cx="470" cy="90" r="15" /><text x="470" y="90">1</text></g>
+      <g class="balloon"><circle cx="470" cy="220" r="15" /><text x="470" y="220">2</text></g>
+      <g class="balloon"><circle cx="470" cy="350" r="15" /><text x="470" y="350">3</text></g>
+      <g class="balloon"><circle cx="470" cy="480" r="15" /><text x="470" y="480">4</text></g>
+    </svg>
+  </div>
+  <div class="bar">
+    <div><small>Full Stack</small><b>Garcia Jhon Lucas</b></div>
+    <div><small>1</small><b>Interfaz</b></div>
+    <div><small>2</small><b>Backend</b></div>
+    <div><small>3</small><b>Datos</b></div>
+    <div><small>4</small><b>Nube</b></div>
+  </div>
+</div>
+</body>
+</html>
